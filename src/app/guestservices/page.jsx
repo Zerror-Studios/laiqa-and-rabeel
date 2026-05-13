@@ -14,42 +14,19 @@ const TABS = [
           Transportation
         </h2>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          Transfers will be arranged for all guests between the hotels and
-          wedding events, including airport shuttles.
+          Transfers will be arranged for all guests between the hotels and wedding events, including airport shuttles.
         </p>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          The closest airport is Marrakech Menara Airport (RAK), approximately
-          25 minutes from the hotel. Casablanca is also an option for those with
-          more international connections — from there, a short domestic flight
-          or a 2-hour drive will get you to Marrakech.
+          The closest airport is Marrakech Menara Airport (RAK), approximately 25 minutes from the hotel. Casablanca (CMN) is also a good option for those flying in from further afield — from there, a short domestic flight or a 2.5-hour drive will get you to Marrakech
         </p>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          For any transportation queries, please reach out to our planning team
-          at{" "}
+          For any questions about transportation, please reach out to our planning team at{" "}
           <a href="mailto:" className="gs-link">
             [WEDDING TEAM EMAIL]
           </a>
           .
         </p>
-        <div className="gs-divider COLOR_TEXT_RED Font_YV" />
-        <p className="gs-body COLOR_TEXT_RED Font_YV">
-          Transfers will be arranged for all guests between the hotels and
-          wedding events, including airport shuttles.
-        </p>
-        <p className="gs-body COLOR_TEXT_RED Font_YV">
-          The closest airport is Marrakech Menara Airport (RAK), approximately
-          25 minutes from the hotel. Casablanca is also an option for those with
-          more international connections — from there, a short domestic flight
-          or a 2-hour drive will get you to Marrakech.
-        </p>
-        <p className="gs-body COLOR_TEXT_RED Font_YV">
-          For any transportation queries, please reach out to our planning team
-          at{" "}
-          <a href="mailto:" className="gs-link">
-            [WEDDING TEAM EMAIL]
-          </a>
-          .
-        </p>
+       
       </div>
     ),
   },
@@ -61,8 +38,8 @@ const TABS = [
       <div className="gs-content">
         <h2 className="gs-section-title COLOR_TEXT_RED Font_Q">Style Guide</h2>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          A wardrobe guide covering dress codes and outfit inspiration for each
-          event will be shared closer to the date.
+          A wardrobe guide covering dress codes and outfit inspiration for each event will be shared closer to the date. 
+
         </p>
       </div>
     ),
@@ -77,9 +54,9 @@ const TABS = [
           Hair & Makeup
         </h2>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          A private salon offering hair and makeup services will be available on
-          November 14th and 15th, located at The Oberoi Marrakech. Booking
-          details will be shared closer to the date.
+        
+A private salon offering hair and makeup services will be available on November 14th and 15th, located at The Oberoi Marrakech. Booking details will be shared closer to the date. 
+
         </p>
       </div>
     ),

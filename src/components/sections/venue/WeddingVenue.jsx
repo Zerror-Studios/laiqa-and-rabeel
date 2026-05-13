@@ -58,7 +58,7 @@ const WeddingVenue = () => {
 
         {/* Description */}
         <p className="max-w-xl mx-auto Font_YV leading-[20px] COLOR_TEXT_RED  WeddingText">
-        All wedding events will take place at The Oberoi Marrakech — set within 28 acres of olive groves and citrus orchards, with views of the Atlas Mountains. Nestled just outside the bustling Medina, the hotel blends traditional Moroccan architecture with the elegance the Oberoi is known for. Guests will be staying across two hotels, the Oberoi and the nearby Park Hyatt. Both nights are hosted by the Shariff and Jawaid families.</p>
+        All wedding events will take place at The Oberoi Marrakech, set within 28 acres of gardens and citrus orchards, just outside the bustling Medina. The hotel blends traditional Moroccan architecture with the Oberoi's signature elegance. Guests will be staying at two hotels: the Oberoi and the nearby Park Hyatt. Accommodation for both nights will be hosted by the Shariff and Jawaid families.</p>
       </div>
     </section>
   );

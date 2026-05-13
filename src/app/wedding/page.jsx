@@ -123,7 +123,7 @@ const page = () => {
             </div>
             <div className="COLOR_TEXT_RED Font_Q w-fit h-fit tracking-tight overflow-hidden">
               <p className="Font_YV max-w-[600px] MainTI w-[90%] mx-auto mt-4">
-                Join us in Marrakech from November 14–16, 2026 for a weekend of celebration. Festivities begin with a Mehndi Lunch and Sangeet Dinner on Saturday, followed by our Nikkah Ceremony and an elegant Black Tie Reception on Sunday.
+                Join us for two days in Marrakech, among the olive groves and Atlas Mountains, beginning with the Mehendi and Sangeet on Saturday, followed by the Wedding Ceremony and Reception on Sunday.
               </p>
             </div>
           </div>

@@ -22,21 +22,20 @@ export const metadata = {
 };
 
  const slideImg = [
-    "/allPageImg/venu1.webp",
-    "/allPageImg/venu4.webp",
-    "/allPageImg/venu3.webp",
-    "/allPageImg/venu4.webp",
+    "/allPageImg/venu/OB1.webp",
+    "/allPageImg/venu/OB2.webp",
+    "/allPageImg/venu/OB3.webp",
+    "/allPageImg/venu/OB4.webp",
   ];
 
-const STA1Txt = "oberoi"
-const STA2Txt = "marrakech"
+const STA1Txt = ""
+const STA2Txt = ""
 
 
  const slideImg2 = [
-    "/allPageImg/venu/1.avif",
-    "/allPageImg/venu/2.avif",
-    "/allPageImg/venu/3.jpg",
-    "/allPageImg/venu/4.jpg",
+     "/allPageImg/venu/PH1.webp",
+    "/allPageImg/venu/PH2.webp",
+    "/allPageImg/venu/PH3.webp",
   ];
 
 
@@ -55,7 +54,7 @@ const venue = () => {
       <WeddingVenue />
       <VenueGallery slideImg={slideImg} STA1Txt={STA1Txt} STA2Txt={STA2Txt} />
       <VenueGallery slideImg={slideImg2} STA1Txt={STA1Txt2} STA2Txt={STA2Txt2} />
-      <TravelInfo />
+      {/* <TravelInfo /> */}
       {/* <FAQ /> */}
     </>
   );

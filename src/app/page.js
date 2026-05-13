@@ -56,17 +56,21 @@ export default function Home() {
       "a1",
     );
 
-    A.fromTo(
-      ".GatImg",
-      {
-        scale: 1,
-      },
-      {
-        scale: 2,
-        ease: "none",
-      },
-      "a1",
-    );
+    if(window.innerWidth > 800){
+      A.fromTo(
+        ".GatImg",
+        {
+          scale: 1,
+        },
+        {
+          scale: 2,
+          ease: "none",
+        },
+        "a1",
+      );
+    }
+
+   
     A.fromTo(
       ".NAMEWED",
       {
@@ -134,7 +138,7 @@ export default function Home() {
           lamp,
           {
             x: "-100vw",
-            y: "+=100vh",
+            y: "+=30vh",
             duration: 10,
             ease: "none",
           },

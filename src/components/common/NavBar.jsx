@@ -181,15 +181,17 @@ const NavBar = () => {
           </div>
         </Link>
 
-        <Link href={`/guestservices`}>
+         <Link href={`/explore`}>
           <div
-            className={`w-fit h-fit ${pathname === "/guestservices" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
+            className={`w-fit h-fit ${pathname === "/explore" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
           >
             {" "}
-            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>{" "}
-            Services
+            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>
+            Explore Marrakech
           </div>
         </Link>
+
+       
       </div>
 
       {/* Logo */}
@@ -205,6 +207,18 @@ const NavBar = () => {
 
       {/* Right */}
       <div className="w-1/3  h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[14px]   COLOR_TEXT_RED">
+        
+         <Link href={`/guestservices`}>
+          <div
+            className={`w-fit h-fit ${pathname === "/guestservices" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
+          >
+            {" "}
+            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>{" "}
+            Services
+          </div>
+        </Link>
+
+        
         <Link href={`/faq`}>
           <div
             className={`w-fit h-fit ${pathname === "/faq" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
@@ -214,15 +228,7 @@ const NavBar = () => {
             FAQs
           </div>
         </Link>
-        <Link href={`/explore`}>
-          <div
-            className={`w-fit h-fit ${pathname === "/explore" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
-          >
-            {" "}
-            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>
-            Explore Marrakech
-          </div>
-        </Link>
+       
 
         <Link target="_blank" rel="noopener noreferrer" href={``}>
           <div className="w-fit h-[46px] RVSPBTN max-md:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] text-white COLOR_BG_RED opacity-80 group ">

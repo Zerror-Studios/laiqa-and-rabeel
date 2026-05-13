@@ -15,7 +15,7 @@ const Footer = () => {
       </div>
 
       <div className="w-1/2 flex flex-col COLOR_TEXT_RED ml-auto max-md:w-full max-md:mt-5 justify-end items-end  max-md:text-center ">
-        <span className=" Font_YV text-[14px]">For any questions, please reach out to the L&R planning team at :</span>
+        <span className=" Font_YV text-[14px]">For any questions, please reach out to the L&R planning team at:</span>
 
         <span className=" Font_YV flex gap-2 max-md:gap-0 max-md:mt-2  max-md:flex-col max-md:text-[14px] max-md:mx-auto max-md:text-center">
 

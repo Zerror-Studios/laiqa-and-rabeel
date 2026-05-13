@@ -244,6 +244,8 @@ export default function home2() {
         <img src={`/lastP.png`} className="w-full h-full object-center object-cover" alt="IMG" />
       </div>
 
+      
+
     </>
   );
 };
