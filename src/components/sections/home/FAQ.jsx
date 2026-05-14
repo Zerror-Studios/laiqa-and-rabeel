@@ -45,6 +45,14 @@ const faqs = [
 `,
   },
   {
+    id: 12,
+    question: "What should I keep in mind about visas and entry requirements? ",
+    answer:
+      `Keep in mind that Morocco requires passports to have 6 month validity upon entry . The official site for the Morocco e-visa process is here (e.g., for Indian passport holders). Please reach out to our wedding planning team [WEDDING TEAM EMAIL] if you have questions and to receive hotel confirmation details for the application. Please note that it is advised you apply for the e-visa 2 weeks ahead for sufficient processing time.
+
+`,
+  },
+  {
     id: 7,
     question: "What is the dress code?",
     answer:
@@ -60,14 +68,6 @@ const faqs = [
 `,
   },
   {
-    id: 9,
-    question: "Can I bring a guest?",
-    answer:
-      `Invitations are extended to named guests only. We appreciate your understanding.
-
-`,
-  },
-  {
     id: 10,
     question: "Can I extend my stay?",
     answer: `If you'd like to arrive early or stay on after the festivities, we've arranged preferential rates at both hotels. Please reach out to our planning team at laiqaandrabeel@gmail.com for details.
@@ -76,6 +76,15 @@ const faqs = [
     LINK: `https://indianvisaonline.gov.in/evisa/tvoa.html`,
   },
   {
+    id: 9,
+    question: "Can I bring a guest?",
+    answer:
+      `Invitations are extended to named guests only. We appreciate your understanding.
+
+`,
+  },
+  
+  {
     id: 11,
     question: "Who should I contact with questions? ",
     answer:
@@ -83,14 +92,7 @@ const faqs = [
 
 `,
   },
-  {
-    id: 12,
-    question: "What should I keep in mind about visas and entry requirements? ",
-    answer:
-      `Keep in mind that Morocco requires passports to have 6 month validity upon entry . The official site for the Morocco e-visa process is here (e.g., for Indian passport holders). Please reach out to our wedding planning team [WEDDING TEAM EMAIL] if you have questions and to receive hotel confirmation details for the application. Please note that it is advised you apply for the e-visa 2 weeks ahead for sufficient processing time.
-
-`,
-  },
+  
   
 ];
 
@@ -108,15 +110,7 @@ export default function FAQ() {
       className="min-h-screen max-md:min-h-fit  flex items-center relative justify-center max-md:py-[20vw] py-[20vh]"
     >
 
-       {/* <div className="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-200/10 via-white/5 to-sky-200/10 blur-[160px]" />
-
-          <div className="absolute top-[-10%] left-[5%] w-[40rem] h-[40rem] rounded-full bg-blue-200/10 blur-[160px]" />
-
-          <div className="absolute bottom-[-20%] right-[0%] w-[35rem] h-[35rem] rounded-full bg-blue-300/20 blur-[160px]" />
-
-          <div className="absolute top-[40%] left-[35%] w-[28rem] h-[28rem] rounded-full bg-blue-200/10 blur-[160px]" />
-        </div> */}
+       
       
       <div className ="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
         <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full object-cover object-center opacity-50" />
