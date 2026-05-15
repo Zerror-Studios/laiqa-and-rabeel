@@ -28,8 +28,8 @@ export const metadata = {
     "/allPageImg/venu/OB4.webp",
   ];
 
-const STA1Txt = ""
-const STA2Txt = ""
+const STA1Txt = "Oberoi"
+const STA2Txt = "Marrakech"
 
 
  const slideImg2 = [

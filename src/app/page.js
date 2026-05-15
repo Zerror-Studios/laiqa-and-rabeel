@@ -12,8 +12,6 @@ import { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-
-
   useEffect(() => {
     const A = gsap.timeline({
       scrollTrigger: {
@@ -56,7 +54,7 @@ export default function Home() {
       "a1",
     );
 
-    if(window.innerWidth > 800){
+    if (window.innerWidth > 800) {
       A.fromTo(
         ".GatImg",
         {
@@ -70,7 +68,6 @@ export default function Home() {
       );
     }
 
-   
     A.fromTo(
       ".NAMEWED",
       {
@@ -93,14 +90,14 @@ export default function Home() {
       },
       "a1",
     );
-    
-    A.to('.NavMenuCont',{
-      opacity: 1
-    },"<0.2")
-   
-  
-    
-   
+
+    A.to(
+      ".NavMenuCont",
+      {
+        opacity: 1,
+      },
+      "<0.2",
+    );
 
     // ================================================
     const Pre = gsap.timeline();
@@ -121,7 +118,7 @@ export default function Home() {
         { x: "-100vw", rotationY: 0 },
         {
           x: "100vw",
-          duration: 10,
+          duration: 20,
           ease: "none",
         },
       )
@@ -138,8 +135,8 @@ export default function Home() {
           lamp,
           {
             x: "-100vw",
-            y: "+=30vh",
-            duration: 10,
+            y: "+=10vh",
+            duration: 20,
             ease: "none",
           },
           "aa1",
@@ -182,13 +179,31 @@ export default function Home() {
     // return () => {
     //   window.removeEventListener("mousemove", handleMouseMove);
     // };
+    
+
+    const B = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".NEFOC",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        // markers: true,
+      },
+    });
+    B.to('.IMGANUI',{
+      width:'50vw',
+      height:'50vh',
+      // duration:1,
+      ease:'none'
+    })
+
   });
 
 
 
   return (
     <>
-      <div  className="w-full h-[200vh]  relative relMain opacity-0 ">
+      <div className="w-full h-[200vh]  relative relMain opacity-0 ">
         <div className="w-full h-screen sticky flex top-0 left-0 overflow-hidden z-20   ">
           {/* back Building */}
           <div className=" absolute top-0 left-0 w-full h-screen z-10 stickyAnimation overflow-hidden">
@@ -199,7 +214,6 @@ export default function Home() {
             />
 
             <div className="pointer-events-none absolute bottom-[0%] left-0 w-full h-[30vh] bg-gradient-to-b from-transparent via-[#ffffff]/65 to-[#ffffff] z-40" />
-           
 
             <Lamp
               top="10%"
@@ -213,12 +227,11 @@ export default function Home() {
           </div>
 
           <div className="w-1/2 h-screen   left flex justify-end items-center LTM relative z-50  overflow-x-visible max-md:overflow-hidden">
-
-            <div className=" w-1/4 max-md:w-full h-[70vh]  absolute right-0 bottom-0 ">
+            <div className=" w-1/4 max-md:w-full h-[60vh]   absolute right-0 bottom-0 ">
               <img
                 src={`/allPageImg/home/GL.png`}
                 alt="left"
-                className=" w-full sm:h-full object-cover object-top    flex max-md:object-left z-10 GatImg  "
+                className=" w-full sm:h-full object-cover object-top   flex max-md:object-left z-10 GatImg  "
               />
             </div>
 
@@ -229,7 +242,7 @@ export default function Home() {
             />
           </div>
           <div className="w-1/2  h-screen left relative flex justify-start items-center RTM z-50 overflow-x-visible">
-            <div className=" w-1/4 max-md:w-full h-[70vh]  absolute left-0 bottom-0 ">
+            <div className=" w-1/4 max-md:w-full h-[60vh]  absolute left-0 bottom-0 ">
               <img
                 src={`/allPageImg/home/RL.png `}
                 alt="Right"
@@ -248,12 +261,16 @@ export default function Home() {
       <TextAnimation />
       <Countdown />
 
-      <div className="w-full h-screen overflow-hidden  mx-auto">
-        <img
-          src={`/lastP.png`}
-          className="w-full h-full max-md:object-[33%_0%] object-cover"
-          alt="IMG"
-        />
+      <div className="w-full h-[200vh] relative NEFOC">
+        <div className="w-full h-screen sticky top-0 left-0 flex  justify-center items-center">
+          <div className="w-full h-screen IMGANUI overflow-hidden  mx-auto">
+            <img
+              src={`/lastP.png`}
+              className="w-full h-full max-md:object-[33%_0%] object-cover"
+              alt="IMG"
+            />
+          </div>
+        </div>
       </div>
     </>
   );

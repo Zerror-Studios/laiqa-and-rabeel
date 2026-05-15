@@ -456,15 +456,10 @@ export default function GuestServices() {
       `}</style>
 
       <div className="gs-page pt-[10vh] relative">
-        <div className="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-200/10 via-white/5 to-sky-200/10 blur-[160px]" />
-
-          <div className="absolute top-[-10%] left-[5%] w-[40rem] h-[40rem] rounded-full bg-blue-200/10 blur-[160px]" />
-
-          <div className="absolute bottom-[-20%] right-[0%] w-[35rem] h-[35rem] rounded-full bg-blue-300/20 blur-[160px]" />
-
-          <div className="absolute top-[40%] left-[35%] w-[28rem] h-[28rem] rounded-full bg-blue-200/10 blur-[160px]" />
-        </div>
+         
+      <div className ="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
+        <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full object-cover object-center opacity-50" />
+      </div>
 
         <div className="gs-edge-top" />
 
