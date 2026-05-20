@@ -193,12 +193,12 @@ export default function Home() {
             />
           </div>
 
-          <div className="w-1/2 h-screen   left flex justify-end items-center LTM relative z-50 GatImg  overflow-x-visible max-md:overflow-hidden">
-            <div className=" w-1/4 max-md:w-full h-[60vh] max-sm:h-[55vh] max-sm:w-[80%] max-sm:bottom-[5%]   absolute right-[-0.5%] bottom-0 ">
+          <div className="w-1/2 h-screen   left flex justify-end items-center LTM relative z-50 GatImg  overflow-x-visible ">
+            <div className=" w-1/4 max-md:w-full h-[60vh] max-sm:h-[50vh] max-sm:w-[20vh] max-sm:bottom-[10%]    absolute right-[-0.5%] bottom-0 ">
               <img
                 src={`/allPageImg/home/GL.png`}
                 alt="left"
-                className=" w-full h-full object-cover object-top  flex max-md:object-left z-10   "
+                className=" w-full sm:h-full object-cover object-top  flex max-md:object-left z-10   "
               />
             </div>
 
@@ -209,7 +209,7 @@ export default function Home() {
             />
           </div>
           <div className="w-1/2  h-screen left relative flex justify-start items-center RTM z-50 GatImg  overflow-x-visible">
-            <div className=" w-1/4 max-md:w-full h-[60vh] max-sm:h-[55vh] max-sm:w-[84%] max-sm:bottom-[5%]   absolute left-[-0.5%] bottom-0 ">
+            <div className=" w-1/4 max-md:w-full h-[60vh] max-sm:h-[55vh] max-sm:w-[19.5vh] max-sm:bottom-[5%]   absolute left-[-0.5%] bottom-0 ">
               <img
                 src={`/allPageImg/home/RL.png `}
                 alt="Right"
