@@ -1,3 +1,366 @@
+// "use client";
+
+// import React, { useEffect, useRef, useState } from "react";
+// import { gsap } from "gsap";
+// import ScrollTrigger from "gsap/dist/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
+
+// const isTouchDevice = () =>
+//   typeof window !== "undefined" && "ontouchstart" in window;
+
+// const FlipCard = ({ children, className }) => {
+//   const [revealed, setRevealed] = useState(false);
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   useEffect(() => {
+//     const checkMobile = () => setIsMobile(window.innerWidth < 640);
+//     checkMobile();
+//     window.addEventListener("resize", checkMobile);
+//     return () => window.removeEventListener("resize", checkMobile);
+//   }, []);
+
+//   const handleClick = () => {
+//     if (isTouchDevice()) setRevealed((prev) => !prev);
+//   };
+//   const handleMouseEnter = () => {
+//     if (!isTouchDevice()) setRevealed(true);
+//   };
+//   const handleMouseLeave = () => {
+//     if (!isTouchDevice()) setRevealed(false);
+//   };
+
+//   const childArray = React.Children.toArray(children);
+
+//   return (
+//     <div
+//       className={className}
+//       onClick={handleClick}
+//       onMouseEnter={handleMouseEnter}
+//       onMouseLeave={handleMouseLeave}
+//       style={{ cursor: "pointer", position: "relative" }}
+//     >
+//       <div className="relative w-full h-full max-md:h-[50vh]">
+//         {/* FRONT */}
+//         <div
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             transition: "opacity 0.5s ease",
+//             opacity: isMobile ? 1 : revealed ? 0 : 1,
+//             pointerEvents: isMobile ? "auto" : revealed ? "none" : "auto",
+//           }}
+//         >
+//           {childArray[0]}
+//         </div>
+
+//         {/* BACK */}
+//         <div
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             transition: "opacity 0.5s ease",
+//             opacity: isMobile ? 1 : revealed ? 1 : 0,   // ✅ FIXED: was `revealed ? 0 : 1`
+//             pointerEvents: isMobile ? "auto" : revealed ? "auto" : "none", // ✅ FIXED: pointer events
+//           }}
+//         >
+//           {childArray[1]}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// const page = () => {
+//   const containerRefN3 = useRef(null);
+
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//       const intro = gsap.timeline();
+
+//       intro
+//         .from(".stickyAnimation2", {
+//           opacity: 0,
+//           duration: 1.2,
+//           ease: "power4.out",
+//         })
+//         .from(
+//           ".MainTI",
+//           {
+//             y: "200%",
+//             duration: 1.2,
+//             ease: "power4.out",
+//             stagger: 0.1,
+//           },
+//           "-=0.8",
+//         );
+
+//       gsap.to(".stickyAnimation2", {
+//         scale: 1.5,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: ".MMAINDDiv2",
+//           start: "top top",
+//           end: "top -100%",
+//           scrub: true,
+//         },
+//       });
+//     });
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="w-full min-h-screen relative MMAINDDiv overflow-x-hidden">
+//         <div className="w-full h-[100vh] relative z-[-90] MMAINDDiv2">
+//           {/* TEXT */}
+//           <div className="w-full h-fit flex flex-col justify-center text-center items-center pt-[20vh]">
+//             <div className="COLOR_TEXT_RED Font_Q text-[6vw] w-fit h-fit leading-[6vw] max-md:text-[14vw] max-md:leading-[14vw] tracking-tight overflow-hidden">
+//               <span className="flex MainTI">Wedding <span className="max-md:hidden ml-5"> ITINERARY</span></span>
+//             </div>
+//             <div className="COLOR_TEXT_RED Font_Q text-[6vw] w-fit h-fit leading-[6vw] max-md:text-[14vw] max-md:leading-[14vw] tracking-tight overflow-hidden">
+//               <span className="flex sm:hidden MainTI">ITINERARY</span>
+//             </div>
+//             <div className="COLOR_TEXT_RED Font_Q w-fit h-fit tracking-tight overflow-hidden">
+//               <p className="Font_YV max-w-[600px] MainTI w-[90%] mx-auto mt-4">
+//                 Join us for two days in Marrakech, among the olive groves and Atlas Mountains, beginning with the Mehendi and Sangeet on Saturday, followed by the Wedding Ceremony and Reception on Sunday.
+//               </p>
+//             </div>
+//           </div>
+
+//           <div className="w-full h-full absolute top-[0%] left-0 z-[-1] overflow-x-hidden">
+//             <img
+//               src={`/allPageImg/wedding/wed1.webp`}
+//               alt="Img"
+//               className="w-full h-full object-cover object-bottom max-md:object-[80%_0%] stickyAnimation2"
+//             />
+//           </div>
+//           <div className="pointer-events-none absolute bottom-[0%] left-0 w-full h-[30vh] bg-gradient-to-b from-transparent via-[#ffffff]/60 to-[#ffffff] z-100" />
+//         </div>
+
+//         {/* Cards Section */}
+//         <div className="w-full h-fit max-md:h-fit COLOR_BG_RED relative z-100 flex max-md:flex-col p-20 max-md:gap-10 gap-5 px-10 justify-center items-center">
+//           {/* T1 — Mehndi Lunch */}
+//           <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
+//             {/* FRONT */}
+//             <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+//               <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
+//                 <h1 className="text-[3vw] leading-[3vw] max-md:text-center max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+//                   Mehendi
+//                 </h1>
+//                 <span className="text-[14px] leading-[16px]  max-md:text-center max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+//                   Saturday, November 14th, 2026
+//                 </span>
+//               </div>
+//               <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+//                 <img src="/assets/s10.png" className="w-[70%] object-cover" />
+//               </div>
+
+//               <div className="sm:hidden  inset-0  text-[#044BB2] flex items-center justify-center ">
+//                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                   Timing ~ 12:00 PM <br />
+//                   <br />
+//                   Main Pool & Orchards
+//                   <br /><br />
+
+//                   Henna, lunch, and an afternoon in the orchards.
+//                 </p>
+//               </div>
+//             </div>
+
+//             {/* BACK */}
+//             <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden  flex items-center justify-center p-5">
+//               <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+//               <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                Timing ~ 12:00 PM <br />
+//                   <br />
+//                   Main Pool & Orchards
+//                   <br /><br />
+
+//                   Henna, lunch, and an afternoon in the orchards.
+//               </p>
+//             </div>
+//           </FlipCard>
+
+//           {/* T2 — Sangeet Dinner */}
+//           <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
+//             {/* FRONT */}
+//             <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+//               <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
+//                 <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+//                   Sangeet
+//                 </h1>
+//                 <span className="text-[14px] leading-[16px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+//                   Saturday, November 14th, 2026
+
+//                 </span>
+//               </div>
+//               <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+//                 <img src="/assets/s35.png" className="w-[70%] object-cover" />
+//               </div>
+//               <div className="sm:hidden  inset-0  text-[#044BB2] flex items-center justify-center">
+
+//                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                  Timing ~ 7:30 PM <br />
+//                   <br />
+//                  Secret Garden
+//                   <br /><br />
+
+//                    Experience the magic of Marrakech with a night of music, dance, and two families coming together in celebration
+
+//                 </p>
+//               </div>
+//             </div>
+
+//             {/* BACK */}
+//             <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+//                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+//               <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                 Timing ~ 7:30 PM <br />
+//                   <br />
+//                  Secret Garden
+//                   <br /><br />
+
+//                    Experience the magic of Marrakech with a night of music, dance, and two families coming together in celebration
+
+//               </p>
+//             </div>
+//           </FlipCard>
+
+//           {/* T3 — Nikkah Ceremony */}
+//           <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
+//             {/* FRONT */}
+//             <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+//               <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
+//                 <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+//                   Nikkah
+//                 </h1>
+//                 <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+//                   Sunday, November 15th, 2026
+
+//                 </span>
+//               </div>
+//               <div className="w-full h-fit flex justify-end max-md:justify-center items-end">
+//                 <img
+//                   src="/assets/s05.png"
+//                   className="w-[45%] object-center object-cover"
+//                 />
+//               </div>
+//               <div className="sm:hidden inset-0  text-[#044BB2] flex items-center justify-center ">
+//                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                   Timing ~ 12:30 PM<br />
+//                   <br />
+//                  Grand Canal
+//                   <br /><br />
+
+//                    Amidst the olive groves and still waters of the Grand Canal, the wedding ceremony takes place
+//                 </p>
+//               </div>
+//             </div>
+
+//             {/* BACK */}
+//             <div className=" max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+//                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+//               <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                 Timing ~ 12:30 PM<br />
+//                   <br />
+//                  Grand Canal
+//                   <br /><br />
+
+//                    Amidst the olive groves and still waters of the Grand Canal, the wedding ceremony takes place
+//               </p>
+//             </div>
+//           </FlipCard>
+
+//           {/* T4 — Reception */}
+//           <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
+//             {/* FRONT */}
+//             <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+//               <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
+//                 <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+//                   Reception Dinner
+//                 </h1>
+//                 <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+//                   Sunday, November 15th, 2026
+//                 </span>
+//               </div>
+//               <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+//                 <img src="/assets/s19.png" className="w-[70%] object-cover" />
+//               </div>
+
+//               <div className="sm:hidden inset-0  text-[#044BB2] flex items-center justify-center ">
+//                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV flex flex-col justify-center items-center">
+//                  Timing ~ 7:30 PM<br />
+//                   <br />
+//                  The Courtyard
+//                   <br /><br />
+//                    Beneath the arches of the Courtyard, an evening of dinner, toasts, and dancing
+//                 </p>
+//               </div>
+//             </div>
+
+//             {/* BACK */}
+//             <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+//                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+//               <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                 Timing ~ 7:30 PM<br />
+//                   <br />
+//                  The Courtyard
+//                   <br /><br />
+//                    Beneath the arches of the Courtyard, an evening of dinner, toasts, and dancing
+//               </p>
+//             </div>
+//           </FlipCard>
+
+//           {/* T5 — Reception */}
+//           <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
+//             {/* FRONT */}
+//             <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+//               <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
+//                 <h1 className="text-[3vw] leading-[3vw] max-sm:text-center max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+//                   Farewell Breakfast
+//                 </h1>
+//                 <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+//                   Monday, November 16th, 2026
+
+//                 </span>
+//               </div>
+//               <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+//                 <img src="/assets/s20.png" className="w-[70%] object-cover" />
+//               </div>
+
+//               <div className="sm:hidden inset-0  text-[#044BB2] flex items-center justify-center ">
+//                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV flex flex-col justify-center items-center">
+//                   Timing ~ 11:00 AM<br />
+//                   <br />
+//                  The Terraces
+//                   <br /><br />
+//                     A final farewell over breakfast on the Terrace
+//                 </p>
+//               </div>
+//             </div>
+
+//             {/* BACK */}
+//             <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+//                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+//               <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+//                 Timing ~ 11:00 AM<br />
+//                   <br />
+//                  The Terraces
+//                   <br /><br />
+//                     A final farewell over breakfast on the Terrace
+//               </p>
+//             </div>
+//           </FlipCard>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default page;
+
+
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -8,25 +371,43 @@ gsap.registerPlugin(ScrollTrigger);
 const isTouchDevice = () =>
   typeof window !== "undefined" && "ontouchstart" in window;
 
-const FlipCard = ({ children, className }) => {
-  const [revealed, setRevealed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+// Shared state manager — only one card open at a time on mobile
+const CardGroup = ({ children }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  return (
+    <>
+      {React.Children.map(children, (child, index) =>
+        React.cloneElement(child, {
+          isActive: activeIndex === index,
+          onActivate: () => setActiveIndex(index),
+          onDeactivate: () => setActiveIndex(null),
+        })
+      )}
+    </>
+  );
+};
+
+const FlipCard = ({ children, className, isActive, onActivate, onDeactivate }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const revealed = isTouchDevice() ? isActive : hovered;
 
   const handleClick = () => {
-    if (isTouchDevice()) setRevealed((prev) => !prev);
+    if (!isTouchDevice()) return;
+    if (isActive) {
+      onDeactivate();
+    } else {
+      onActivate(); // automatically closes previous via parent state
+    }
   };
+
   const handleMouseEnter = () => {
-    if (!isTouchDevice()) setRevealed(true);
+    if (!isTouchDevice()) setHovered(true);
   };
+
   const handleMouseLeave = () => {
-    if (!isTouchDevice()) setRevealed(false);
+    if (!isTouchDevice()) setHovered(false);
   };
 
   const childArray = React.Children.toArray(children);
@@ -39,15 +420,15 @@ const FlipCard = ({ children, className }) => {
       onMouseLeave={handleMouseLeave}
       style={{ cursor: "pointer", position: "relative" }}
     >
-      <div className="relative w-full h-full max-md:h-[50vh]">
+      <div className="relative w-full h-full">
         {/* FRONT */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             transition: "opacity 0.5s ease",
-            opacity: isMobile ? 1 : revealed ? 0 : 1,
-            pointerEvents: isMobile ? "auto" : revealed ? "none" : "auto",
+            opacity: revealed ? 0 : 1,
+            pointerEvents: revealed ? "none" : "auto",
           }}
         >
           {childArray[0]}
@@ -59,8 +440,8 @@ const FlipCard = ({ children, className }) => {
             position: "absolute",
             inset: 0,
             transition: "opacity 0.5s ease",
-            opacity: isMobile ? 1 : revealed ? 1 : 0,   // ✅ FIXED: was `revealed ? 0 : 1`
-            pointerEvents: isMobile ? "auto" : revealed ? "auto" : "none", // ✅ FIXED: pointer events
+            opacity: revealed ? 1 : 0,
+            pointerEvents: revealed ? "auto" : "none",
           }}
         >
           {childArray[1]}
@@ -71,8 +452,6 @@ const FlipCard = ({ children, className }) => {
 };
 
 const page = () => {
-  const containerRefN3 = useRef(null);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       const intro = gsap.timeline();
@@ -139,219 +518,145 @@ const page = () => {
         </div>
 
         {/* Cards Section */}
-        <div className="w-full h-fit max-md:h-fit COLOR_BG_RED relative z-100 flex max-md:flex-col p-20 max-md:gap-10 gap-5 px-10 justify-center items-center">
-          {/* T1 — Mehndi Lunch */}
-          <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
-            {/* FRONT */}
-            <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
-              <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
-                <h1 className="text-[3vw] leading-[3vw] max-md:text-center max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
-                  Mehendi
-                </h1>
-                <span className="text-[14px] leading-[16px]  max-md:text-center max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
-                  Saturday, November 14th, 2026
-                </span>
-              </div>
-              <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
-                <img src="/assets/s10.png" className="w-[70%] object-cover" />
-              </div>
+        <div className="w-full h-fit COLOR_BG_RED relative z-100 flex max-md:flex-col p-20 max-md:gap-10 gap-5 px-10 justify-center items-center">
+          <CardGroup>
 
-              <div className="sm:hidden  inset-0  text-[#044BB2] flex items-center justify-center ">
+            {/* T1 — Mehndi Lunch */}
+            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%]">
+              {/* FRONT */}
+              <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+                <div className="w-full h-fit flex flex-col max-md:items-center">
+                  <h1 className="text-[3vw] leading-[3vw] max-md:text-center max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+                    Mehendi
+                  </h1>
+                  <span className="text-[14px] leading-[16px] max-md:text-center max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+                    Saturday, November 14th, 2026
+                  </span>
+                </div>
+                <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+                  <img src="/assets/s10.png" className="w-[70%] object-cover" />
+                </div>
+              </div>
+              {/* BACK */}
+              <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                  Timing ~ 12:00 PM <br />
-                  <br />
-                  Main Pool & Orchards
-                  <br /><br />
-
+                  Timing ~ 12:00 PM <br /><br />
+                  Main Pool & Orchards<br /><br />
                   Henna, lunch, and an afternoon in the orchards.
                 </p>
               </div>
-            </div>
+            </FlipCard>
 
-            {/* BACK */}
-            <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden  flex items-center justify-center p-5">
-              <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
-              <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-               Timing ~ 12:00 PM <br />
-                  <br />
-                  Main Pool & Orchards
-                  <br /><br />
-
-                  Henna, lunch, and an afternoon in the orchards.
-              </p>
-            </div>
-          </FlipCard>
-
-          {/* T2 — Sangeet Dinner */}
-          <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
-            {/* FRONT */}
-            <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
-              <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
-                <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
-                  Sangeet
-                </h1>
-                <span className="text-[14px] leading-[16px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
-                  Saturday, November 14th, 2026
-
-                </span>
+            {/* T2 — Sangeet Dinner */}
+            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%]">
+              {/* FRONT */}
+              <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+                <div className="w-full h-fit flex flex-col max-md:items-center">
+                  <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+                    Sangeet
+                  </h1>
+                  <span className="text-[14px] leading-[16px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+                    Saturday, November 14th, 2026
+                  </span>
+                </div>
+                <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+                  <img src="/assets/s35.png" className="w-[70%] object-cover" />
+                </div>
               </div>
-              <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
-                <img src="/assets/s35.png" className="w-[70%] object-cover" />
-              </div>
-              <div className="sm:hidden  inset-0  text-[#044BB2] flex items-center justify-center">
-
+              {/* BACK */}
+              <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                 Timing ~ 7:30 PM <br />
-                  <br />
-                 Secret Garden
-                  <br /><br />
-
-                   Experience the magic of Marrakech with a night of music, dance, and two families coming together in celebration
-
+                  Timing ~ 7:30 PM <br /><br />
+                  Secret Garden<br /><br />
+                  Experience the magic of Marrakech with a night of music, dance, and two families coming together in celebration
                 </p>
               </div>
-            </div>
+            </FlipCard>
 
-            {/* BACK */}
-            <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
-               <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
-              <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                Timing ~ 7:30 PM <br />
-                  <br />
-                 Secret Garden
-                  <br /><br />
-
-                   Experience the magic of Marrakech with a night of music, dance, and two families coming together in celebration
-
-              </p>
-            </div>
-          </FlipCard>
-
-          {/* T3 — Nikkah Ceremony */}
-          <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
-            {/* FRONT */}
-            <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
-              <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
-                <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
-                  Nikkah
-                </h1>
-                <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
-                  Sunday, November 15th, 2026
-
-                </span>
+            {/* T3 — Nikkah Ceremony */}
+            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%]">
+              {/* FRONT */}
+              <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+                <div className="w-full h-fit flex flex-col max-md:items-center">
+                  <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+                    Nikkah
+                  </h1>
+                  <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+                    Sunday, November 15th, 2026
+                  </span>
+                </div>
+                <div className="w-full h-fit flex justify-end max-md:justify-center items-end">
+                  <img src="/assets/s05.png" className="w-[45%] object-center object-cover" />
+                </div>
               </div>
-              <div className="w-full h-fit flex justify-end max-md:justify-center items-end">
-                <img
-                  src="/assets/s05.png"
-                  className="w-[45%] object-center object-cover"
-                />
-              </div>
-              <div className="sm:hidden inset-0  text-[#044BB2] flex items-center justify-center ">
+              {/* BACK */}
+              <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                  Timing ~ 12:30 PM<br />
-                  <br />
-                 Grand Canal
-                  <br /><br />
-
-                   Amidst the olive groves and still waters of the Grand Canal, the wedding ceremony takes place
+                  Timing ~ 12:30 PM<br /><br />
+                  Grand Canal<br /><br />
+                  Amidst the olive groves and still waters of the Grand Canal, the wedding ceremony takes place
                 </p>
               </div>
-            </div>
+            </FlipCard>
 
-            {/* BACK */}
-            <div className=" max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
-               <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
-              <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                Timing ~ 12:30 PM<br />
-                  <br />
-                 Grand Canal
-                  <br /><br />
-
-                   Amidst the olive groves and still waters of the Grand Canal, the wedding ceremony takes place
-              </p>
-            </div>
-          </FlipCard>
-
-          {/* T4 — Reception */}
-          <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
-            {/* FRONT */}
-            <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
-              <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
-                <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
-                  Reception Dinner
-                </h1>
-                <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
-                  Sunday, November 15th, 2026
-                </span>
+            {/* T4 — Reception */}
+            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%]">
+              {/* FRONT */}
+              <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+                <div className="w-full h-fit flex flex-col max-md:items-center">
+                  <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+                    Reception Dinner
+                  </h1>
+                  <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+                    Sunday, November 15th, 2026
+                  </span>
+                </div>
+                <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+                  <img src="/assets/s19.png" className="w-[70%] object-cover" />
+                </div>
               </div>
-              <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
-                <img src="/assets/s19.png" className="w-[70%] object-cover" />
-              </div>
-
-              <div className="sm:hidden inset-0  text-[#044BB2] flex items-center justify-center ">
-                <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV flex flex-col justify-center items-center">
-                 Timing ~ 7:30 PM<br />
-                  <br />
-                 The Courtyard
-                  <br /><br />
-                   Beneath the arches of the Courtyard, an evening of dinner, toasts, and dancing
+              {/* BACK */}
+              <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+                <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+                  Timing ~ 7:30 PM<br /><br />
+                  The Courtyard<br /><br />
+                  Beneath the arches of the Courtyard, an evening of dinner, toasts, and dancing
                 </p>
               </div>
-            </div>
+            </FlipCard>
 
-            {/* BACK */}
-            <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
-               <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
-              <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                Timing ~ 7:30 PM<br />
-                  <br />
-                 The Courtyard
-                  <br /><br />
-                   Beneath the arches of the Courtyard, an evening of dinner, toasts, and dancing
-              </p>
-            </div>
-          </FlipCard>
-
-          {/* T5 — Reception */}
-          <FlipCard className="w-1/4 h-[43vh] max-md:h-fit max-md:w-[90%] max-md:pointer-events-none">
-            {/* FRONT */}
-            <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
-              <div className="w-full h-fit max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
-                <h1 className="text-[3vw] leading-[3vw] max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
-                  Farewell Breakfast
-                </h1>
-                <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
-                  Monday, November 16th, 2026
-
-                </span>
+            {/* T5 — Farewell Breakfast */}
+            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%]">
+              {/* FRONT */}
+              <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
+                <div className="w-full h-fit flex flex-col max-md:items-center">
+                  <h1 className="text-[3vw] leading-[3vw] max-md:text-center max-md:text-[7vw] max-md:leading-[7vw] Font_Q COLOR_TEXT_RED">
+                    Farewell Breakfast
+                  </h1>
+                  <span className="text-[14px] max-md:text-[4vw] Font_YV COLOR_TEXT_RED">
+                    Monday, November 16th, 2026
+                  </span>
+                </div>
+                <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
+                  <img src="/assets/s20.png" className="w-[70%] object-cover" />
+                </div>
               </div>
-              <div className="w-full aspect-2/1 flex justify-end max-md:justify-center items-end">
-                <img src="/assets/s20.png" className="w-[70%] object-cover" />
-              </div>
-
-              <div className="sm:hidden inset-0  text-[#044BB2] flex items-center justify-center ">
-                <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV flex flex-col justify-center items-center">
-                  Timing ~ 11:00 AM<br />
-                  <br />
-                 The Terraces
-                  <br /><br />
-                    A final farewell over breakfast on the Terrace
+              {/* BACK */}
+              <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
+                <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
+                <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
+                  Timing ~ 11:00 AM<br /><br />
+                  The Terraces<br /><br />
+                  A final farewell over breakfast on the Terrace
                 </p>
               </div>
-            </div>
+            </FlipCard>
 
-            {/* BACK */}
-            <div className="max-md:hidden absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
-               <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
-              <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                Timing ~ 11:00 AM<br />
-                  <br />
-                 The Terraces
-                  <br /><br />
-                    A final farewell over breakfast on the Terrace
-              </p>
-            </div>
-          </FlipCard>
+          </CardGroup>
         </div>
       </div>
     </>

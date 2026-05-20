@@ -16,43 +16,7 @@ const NavBar = () => {
 
   const pathname = usePathname();
 
-  // =========================== NAV UP ON SCROLL
-
-  // useEffect(() => {
-  //   if (!navRef.current) return;
-
-  //   let lastScroll = 0;
-
-  //   const trigger = ScrollTrigger.create({
-  //     start: 0,
-  //     end: "max",
-  //     onUpdate: (self) => {
-  //       const currentScroll = self.scroll();
-
-  //       if (currentScroll > lastScroll && currentScroll > 100) {
-  //         // Scroll DOWN → hide navbar
-  //         gsap.to(navRef.current, {
-  //           y: "-300%",
-  //           duration: 0.4,
-  //           ease: "power3.out",
-  //         });
-  //       } else {
-  //         // Scroll UP → show navbar
-  //         gsap.to(navRef.current, {
-  //           y: "0%",
-  //           duration: 0.4,
-  //           ease: "power3.out",
-  //         });
-  //       }
-
-  //       lastScroll = currentScroll;
-  //     },
-  //   });
-
-  //   return () => {
-  //     trigger.kill();
-  //   };
-  // }, []);
+  
 
   const [isNavOpen, SetIsNavOpen] = useState(false);
 
@@ -160,14 +124,14 @@ const NavBar = () => {
       className="NavMenuCont w-full h-[46px] mt-10 flex gap-50 justify-between fixed top-0 left-0 items-center z-[100] px-20"
     >
       {/* Left */}
-      <div className="w-1/3 h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[14px] COLOR_TEXT_RED ">
+      <div className="w-1/3 h-full RVSPBTN items-center max-2xl:hidden flex justify-between uppercase text-[14px] COLOR_TEXT_RED ">
         <Link href={`/wedding`}>
           <div
             className={`w-fit h-fit ${pathname === "/wedding" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
           >
             {" "}
             <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>{" "}
-            Wedding Itinerary
+            Wedding Events
           </div>
         </Link>
 
@@ -181,15 +145,16 @@ const NavBar = () => {
           </div>
         </Link>
 
-        <Link href={`/guestservices`}>
+        <Link href={`/faq`}>
           <div
-            className={`w-fit h-fit ${pathname === "/guestservices" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
+            className={`w-fit h-fit ${pathname === "/faq" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
           >
             {" "}
-            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>{" "}
-            Guests Services
+            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>
+            FAQs
           </div>
         </Link>
+
 
         
 
@@ -208,19 +173,19 @@ const NavBar = () => {
       </div>
 
       {/* Right */}
-      <div className="w-1/3  h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[14px]   COLOR_TEXT_RED">
+      <div className="w-1/3  h-full RVSPBTN items-center max-2xl:hidden flex justify-between uppercase text-[14px]   COLOR_TEXT_RED">
         
-        
-        <Link href={`/faq`}>
+        <Link href={`/guestservices`}>
           <div
-            className={`w-fit h-fit ${pathname === "/faq" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
+            className={`w-fit h-fit ${pathname === "/guestservices" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
           >
             {" "}
-            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>
-            FAQs
+            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[#044BB2]"></div>{" "}
+            Guests Services
           </div>
         </Link>
-
+        
+        
          <Link href={`/explore`}>
           <div
             className={`w-fit h-fit ${pathname === "/explore" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
@@ -245,7 +210,7 @@ const NavBar = () => {
       <div
         onClick={clickCheck}
         htmlFor="check"
-        className=" absolute top-1 right-8 lg:hidden "
+        className=" absolute top-1 right-8 2xl:hidden "
       >
         {isNavOpen == false ? (
           <>
@@ -259,7 +224,7 @@ const NavBar = () => {
       </div>
 
       {/* MOBILENAV */}
-      <div className="w-full flex flex-col lg:hidden justify-center text-[1.5rem] leading-[1.5rem] z-100 uppercase gap-4 items-center MOBILENAV h-screen bg-white absolute -top-10 left-[150%] z-[-1]">
+      <div className="w-full flex flex-col 2xl:hidden justify-center text-[1.5rem] leading-[1.5rem] z-100 uppercase gap-4 items-center MOBILENAV h-screen bg-white absolute -top-10 left-[150%] z-[-1]">
         <Link href={`/`}>
           <div
             onClick={clickCheck}
@@ -277,7 +242,7 @@ const NavBar = () => {
           >
             {" "}
             <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[white]"></div>{" "}
-            Itinerary
+            Wedding Events
           </div>
         </Link>
         <Link href={`/venue`}>
@@ -290,6 +255,16 @@ const NavBar = () => {
             Wedding Venue
           </div>
         </Link>
+         <Link href={`/faq`}>
+          <div
+            onClick={clickCheck}
+            className={`w-fit h-fit  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
+          >
+            {" "}
+            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out "></div>
+            FAQ
+          </div>
+        </Link>
         <Link href={`/guestservices`}>
           <div
             onClick={clickCheck}
@@ -297,7 +272,7 @@ const NavBar = () => {
           >
             {" "}
             <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out bg-[white]"></div>{" "}
-            Services
+            Guest Services
           </div>
         </Link>
         <Link href={`/explore`}>
@@ -310,24 +285,15 @@ const NavBar = () => {
             Explore Marrakech
           </div>
         </Link>
-        <Link href={`/faq`}>
-          <div
-            onClick={clickCheck}
-            className={`w-fit h-fit  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
-          >
-            {" "}
-            <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out "></div>
-            FAQ
-          </div>
-        </Link>
+       
 
         {/* BTN */}
         <Link
           target="_blank"
           rel="noopener noreferrer"
-          href={`https://sonalandkush.rsvpify.com/rsvp-page-preview/1252849?signature=235b1d68860e41829c9570d80795912fa2bf5f030023fc95842583c3eca6cee8&securityToken=esXDu9juQOnJn9BH6C1HxIIu9kTXtrLv`}
+          href={``}
         >
-          <div className="w-fit h-[46px] lg:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] mt-20 text-[white] COLOR_BG_RED">
+          <div className="w-fit h-[46px] 2xl:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] mt-20 text-[white] COLOR_BG_RED">
             RSVP HERE
           </div>
         </Link>

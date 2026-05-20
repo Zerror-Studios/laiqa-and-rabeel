@@ -62,14 +62,22 @@ const Footer = () => {
           ))}
         </div>
 
+         {/* ── Ornamental divider ── */}
+      <div className="flex items-center gap-4 px-10 max-md:px-6 sm:hidden">
+        <div className="flex-1 h-[0.5px] bg-[#55130130]" />
+        <span className="COLOR_TEXT_RED text-[10px] tracking-[0.3em] Font_YV uppercase select-none">✦</span>
+        <div className="flex-1 h-[0.5px] bg-[#55130130]" />
+      </div>
+
+
         {/* Col 3 — Contact */}
         <div className="flex flex-col gap-3 max-lg:items-center max-lg:text-center">
-          <span className="Font_YV COLOR_TEXT_RED text-[16px] tracking-[0.25em] uppercase font-semibold opacity-100 mb-1">
+          <span className="Font_Q font-semibold COLOR_TEXT_RED text-[16px] tracking-[0.25em] uppercase font-semibold opacity-100 mb-1">
             Get in Touch
           </span>
-          <p className="Font_YV COLOR_TEXT_RED text-[12px] opacity-70 leading-relaxed">
+          <span className="Font_YV COLOR_TEXT_RED text-[16px]  leading-relaxed">
             For any questions, reach out to the L&amp;R planning team:
-          </p>
+          </span>
 
           {/* Email */}
           <a
@@ -84,7 +92,7 @@ const Footer = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
             </svg>
-            <span className="relative flex flex-col COLOR_TEXT_RED Font_YV font-semibold text-[16px] cursor-pointer select-none">
+            <span className="relative flex flex-col COLOR_TEXT_RED Font_YV  text-[16px] cursor-pointer select-none">
               laiqaandrabeel@gmail.com
               <span className="h-[1px] w-0 COLOR_BG_RED transition-all duration-200 ease-in-out group-hover/contact:w-full block" />
             </span>
@@ -102,7 +110,7 @@ const Footer = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
             </svg>
-            <span className="relative flex flex-col COLOR_TEXT_RED Font_YV font-semibold text-[16px] cursor-pointer select-none">
+            <span className="relative flex flex-col COLOR_TEXT_RED Font_YV  text-[16px] cursor-pointer select-none">
               +91 93588 00614
               <span className="h-[1px] w-0 COLOR_BG_RED transition-all duration-200 ease-in-out group-hover/contact:w-full block" />
             </span>
@@ -120,7 +128,7 @@ const Footer = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
             </svg>
-            <span className="relative flex flex-col COLOR_TEXT_RED Font_YV font-semibold text-[16px] cursor-pointer select-none">
+            <span className="relative flex flex-col COLOR_TEXT_RED Font_YV  text-[16px] cursor-pointer select-none">
               +91 93100 69102
               <span className="h-[1px] w-0 COLOR_BG_RED transition-all duration-200 ease-in-out group-hover/contact:w-full block" />
             </span>
@@ -131,14 +139,14 @@ const Footer = () => {
       {/* ── Ornamental divider ── */}
       <div className="flex items-center gap-4 px-10 max-md:px-6">
         <div className="flex-1 h-[0.5px] bg-[#55130130]" />
-        <span className="COLOR_TEXT_RED opacity-30 text-[10px] tracking-[0.3em] Font_YV uppercase select-none">✦</span>
+        <span className="COLOR_TEXT_RED text-[10px] tracking-[0.3em] Font_YV uppercase select-none">✦</span>
         <div className="flex-1 h-[0.5px] bg-[#55130130]" />
       </div>
 
       {/* ── Copyright bar ── */}
       <div className="px-10 max-md:px-6 py-5 flex max-md:flex-col max-md:gap-2 items-center justify-center">
-        <span className="Font_Q COLOR_TEXT_RED text-[16px] tracking-[0.12em] opacity-100">
-          © {new Date().getFullYear()} Laiqa &amp; Rabeel. All rights reserved.
+        <span className="Font_Q COLOR_TEXT_RED text-[16px] tracking-[0.12em] max-sm:text-center opacity-100">
+          © {new Date().getFullYear()} Laiqa &amp; Rabeel. <br className="sm:hidden" /> All rights reserved.
         </span>
       </div>
 

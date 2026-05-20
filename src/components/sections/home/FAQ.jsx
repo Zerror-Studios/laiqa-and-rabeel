@@ -33,7 +33,8 @@ const faqs = [
     id: 5,
     question: "Which airport should I fly into?",
     answer:
-      `The closest airport is Marrakech Menara Airport (RAK), approximately 25 minutes from the hotel. Casablanca is also an option for those with more international connections — from there, a short domestic flight or a 2-hour drive will get you to Marrakech.
+      `The closest airport is Marrakech Menara Airport (RAK), approximately 25 minutes from the hotel. Casablanca is also an option for those with more international connections — from there, a short domestic flight or a 2.5-hour drive will get you to Marrakech.
+
 
 `,
   },
@@ -48,15 +49,17 @@ const faqs = [
     id: 12,
     question: "What should I keep in mind about visas and entry requirements? ",
     answer:
-      `Keep in mind that Morocco requires passports to have 6 month validity upon entry . The official site for the Morocco e-visa process is here (e.g., for Indian passport holders). Please reach out to our wedding planning team [WEDDING TEAM EMAIL] if you have questions and to receive hotel confirmation details for the application. Please note that it is advised you apply for the e-visa 2 weeks ahead for sufficient processing time.
+      `Keep in mind that Morocco requires passports to have 6 month validity upon entry.The official site for the Morocco e-visa process is here (e.g., for Indian passport holders). Please reach out to our wedding planning team [WEDDING TEAM EMAIL] if you have questions and to receive hotel confirmation details for the application. Please note that it is advised you apply for the e-visa 2 weeks ahead for sufficient processing time
 
 `,
+LINK: `https://indianvisaonline.gov.in/evisa/tvoa.html`,
   },
   {
     id: 7,
     question: "What is the dress code?",
     answer:
       `Dress codes vary by event. A wardrobe guide will be shared closer to the date.
+
 
 `,
   },
@@ -70,16 +73,16 @@ const faqs = [
   {
     id: 10,
     question: "Can I extend my stay?",
-    answer: `If you'd like to arrive early or stay on after the festivities, we've arranged preferential rates at both hotels. Please reach out to our planning team at laiqaandrabeel@gmail.com for details.
+    answer: `If you'd like to arrive early or stay on after the festivities, we've arranged preferential rates at both hotels. Please reach out to our planning team at [WEDDING TEAM EMAIL] for details.
 
 `,
-    LINK: `https://indianvisaonline.gov.in/evisa/tvoa.html`,
+    
   },
   {
     id: 9,
     question: "Can I bring a guest?",
     answer:
-      `Invitations are extended to named guests only. We appreciate your understanding.
+      ` Invitations are extended to named guests only. We appreciate your understanding.
 
 `,
   },

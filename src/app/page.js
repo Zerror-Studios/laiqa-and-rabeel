@@ -148,39 +148,6 @@ export default function Home() {
         });
     });
 
-    // =============================== ENVIROMENT MOVE ANIMATION
-    // const handleMouseMove = (e) => {
-    //   const { innerWidth, innerHeight } = window;
-
-    //   const centerX = innerWidth / 2;
-    //   const centerY = innerHeight / 2;
-
-    //   const mouseX = e.clientX;
-    //   const mouseY = e.clientY;
-
-    //   // Normalize (-1 to 1)
-    //   const x = (mouseX - centerX) / centerX;
-    //   const y = (mouseY - centerY) / centerY;
-
-    //   // Move opposite direction (invert)
-    //   const moveX = -x * 5;
-    //   const moveY = -y * 5;
-
-    //   gsap.to(".stickyAnimation", {
-    //     x: moveX,
-    //     y: moveY,
-    //     duration: 0.5,
-    //     ease: "power2.out",
-    //   });
-    // };
-
-    // window.addEventListener("mousemove", handleMouseMove);
-
-    // return () => {
-    //   window.removeEventListener("mousemove", handleMouseMove);
-    // };
-    
-
     const B = gsap.timeline({
       scrollTrigger: {
         trigger: ".NEFOC",
@@ -226,33 +193,33 @@ export default function Home() {
             />
           </div>
 
-          <div className="w-1/2 h-screen   left flex justify-end items-center LTM relative z-50  overflow-x-visible max-md:overflow-hidden">
-            <div className=" w-1/4 max-md:w-full h-[60vh]   absolute right-0 bottom-0 ">
+          <div className="w-1/2 h-screen   left flex justify-end items-center LTM relative z-50 GatImg  overflow-x-visible max-md:overflow-hidden">
+            <div className=" w-1/4 max-md:w-full h-[60vh] max-sm:h-[55vh] max-sm:w-[80%] max-sm:bottom-[5%]   absolute right-[-0.5%] bottom-0 ">
               <img
                 src={`/allPageImg/home/GL.png`}
                 alt="left"
-                className=" w-full sm:h-full object-cover object-top   flex max-md:object-left z-10 GatImg  "
+                className=" w-full h-full object-cover object-top  flex max-md:object-left z-10   "
               />
             </div>
 
             <img
               src={`/allPageImg/home/L.png`}
               alt="left"
-              className="h-full w-screen object-cover scale-[1.03] max-sm:scale-[1.06] object-center max-md:object-right flex absolute top-0 left-0 z-[-1]  "
+              className="h-full w-screen object-cover   object-center max-md:object-right flex absolute top-0 left-0 z-[-1]  "
             />
           </div>
-          <div className="w-1/2  h-screen left relative flex justify-start items-center RTM z-50 overflow-x-visible">
-            <div className=" w-1/4 max-md:w-full h-[60vh]  absolute left-0 bottom-0 ">
+          <div className="w-1/2  h-screen left relative flex justify-start items-center RTM z-50 GatImg  overflow-x-visible">
+            <div className=" w-1/4 max-md:w-full h-[60vh] max-sm:h-[55vh] max-sm:w-[84%] max-sm:bottom-[5%]   absolute left-[-0.5%] bottom-0 ">
               <img
                 src={`/allPageImg/home/RL.png `}
                 alt="Right"
-                className=" w-full sm:h-full object-cover object-top    flex max-md:object-left z-10 GatImg"
+                className=" w-full sm:h-full object-cover object-top    flex max-md:object-left z-10 "
               />
             </div>
             <img
               src={`/allPageImg/home/R.png`}
               alt="left"
-              className="w-full h-full object-cover scale-[1.02] max-sm:scale-[1.06]  object-center max-md:object-left flex absolute top-0  right-0 z-[-1]  "
+              className="w-full h-full object-cover    object-center max-md:object-left flex absolute top-0  right-0 z-[-1]  "
             />
           </div>
         </div>
@@ -261,7 +228,7 @@ export default function Home() {
       <TextAnimation />
       <Countdown />
 
-      <div className="w-full h-[200vh] relative NEFOC">
+      <div className="w-full h-[150vh] relative NEFOC">
         <div className="w-full h-screen sticky top-0 left-0 flex  justify-center items-center">
           <div className="w-full h-screen IMGANUI overflow-hidden  mx-auto">
             <img
