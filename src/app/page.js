@@ -7,13 +7,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
-
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-
   const pathname = usePathname();
   useEffect(() => {
     const A = gsap.timeline({
@@ -170,45 +168,45 @@ export default function Home() {
     });
   }, []);
 
- useEffect(() => {
-  // OTHER PAGES
-  if (pathname !== "/") {
+  useGSAP(() => {
+    // OTHER PAGES
+    if (pathname !== "/") {
+      gsap.set(".NavMenuCont", {
+        opacity: 1,
+      });
+
+      return;
+    }
+
+    // HOME PAGE
     gsap.set(".NavMenuCont", {
-      opacity: 1,
+      opacity: 0,
     });
 
-    return;
-  }
+    const trigger = ScrollTrigger.create({
+      start: 80,
 
-  // HOME PAGE
-  gsap.set(".NavMenuCont", {
-    opacity: 0,
-  });
+      onUpdate: (self) => {
+        if (self.scroll() > 80) {
+          gsap.to(".NavMenuCont", {
+            opacity: 1,
+            duration: 0.2,
+            overwrite: true,
+          });
+        } else {
+          gsap.to(".NavMenuCont", {
+            opacity: 0,
+            duration: 0.2,
+            overwrite: true,
+          });
+        }
+      },
+    });
 
-  const trigger = ScrollTrigger.create({
-    start: 80,
-
-    onUpdate: (self) => {
-      if (self.scroll() > 80) {
-        gsap.to(".NavMenuCont", {
-          opacity: 1,
-          duration: 0.2,
-          overwrite: true,
-        });
-      } else {
-        gsap.to(".NavMenuCont", {
-          opacity: 0,
-          duration: 0.2,
-          overwrite: true,
-        });
-      }
-    },
-  });
-
-  return () => {
-    trigger.kill();
-  };
-}, [pathname]);
+    return () => {
+      trigger.kill();
+    };
+  }, [pathname]);
 
   return (
     <>

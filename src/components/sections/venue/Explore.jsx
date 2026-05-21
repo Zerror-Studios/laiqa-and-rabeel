@@ -219,8 +219,12 @@ const ActivitiesGrid = () => {
     });
   });
 
+
   return (
-    <div ref={sectionRef} className="relative py-[20vh] max-md:pb-[10vh]">
+    <div
+      ref={sectionRef}
+      className="relative py-[20vh] max-md:pb-[10vh] max-2xl:px-5"
+    >
       <div className="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
         <img
           src={`/allPageImg/sky.png`}
@@ -235,24 +239,35 @@ const ActivitiesGrid = () => {
         </h4> */}
         <div className="w-[90%] max-w-[740px] flex flex-col contA6 justify-center items-center gap-6">
           <div className="text-[#395238] text-[1.1vw] leading-[1.1vw] max-md:text-[18px] max-md:leading-[18px] contA6 COLOR_TEXT_RED text-center Font_YV gap-2">
-            <p>
-              "A visit to Marrakech was a great shock to me. This city taught me
-              color." — Yves Saint Laurent <br /><br /> Marrakech is a living mood board —
-              pink walls under endless blue skies, lush green palm trees, and
-              the rich hues of spices and textiles. A city where creativity,
-              culture, and heritage flow seamlessly. <br /><br /> To help you make the most
-              of your time here, we've put together a list of our favourite
-              places to explore. For bookings, please reach out to our
-              experiences partner:
+            <h3 className="Font_Q max-sm:flex max-sm:flex-col">
+              A visit to Marrakech was a great shock to me. This city taught me
+              color.{" "}
+              <p className="COLOR_TEXT_RED text-center text-[1.1vw] leading-[1.1vw] max-sm:mt-2 max-md:text-[18px] max-md:leading-[18px] Font_YV">
+                {" "}
+                — Yves Saint Laurent
+              </p>{" "}
+            </h3>
+            <p className="mt-4">
+              "Marrakech is a living mood board — pink walls under endless blue
+              skies, lush green palm trees, and the rich hues of spices and
+              textiles. A city where creativity, culture, and heritage flow
+              seamlessly.To help you make the most of your time here, we've put
+              together a list of our favourite places to explore. For bookings,
+              please reach out to our experiences partner:
             </p>
-
-            <br /><br />
-
-            <p>Marrakech Travel Experts — Driss Zidani Alaoui </p>
-            <br />
-            <p>
-              <a href="">driss@marrakeshtravelexperts.com</a> |{" "}
-              <a href=""> +212 661 222 557</a>
+            <p className="mt-4">
+              Marrakech Travel Experts — Driss Zidani Alaoui{" "}
+            </p>
+            {/* <br /> */}
+            <p className="mt-1">
+              <a href="mailto:driss@marrakeshtravelexperts.com" className="">
+                driss@marrakeshtravelexperts.com
+              </a>{" "}
+              |{" "}
+              <a href="tel:+212661222557" className="">
+                {" "}
+                +212 661 222 557
+              </a>
             </p>
           </div>
         </div>
@@ -306,7 +321,7 @@ const ActivityCard = ({ act }) => (
           {act.title}
         </span>
       </div>
-      <span className="text-[14px] text-justify tracking-tight Font_YV uppercase text-[#1727b9]/70 font-medium">
+      <span className="text-[14px] leading-[18px] text-justify tracking-tight Font_YV uppercase text-[#1727b9]/70 font-medium">
         {act.desc}
       </span>
     </div>

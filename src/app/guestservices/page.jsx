@@ -21,10 +21,10 @@ const TABS = [
         </p>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
           For any questions about transportation, please reach out to our planning team at{" "}
-          <a href="mailto:" className="gs-link">
+          <p href="mailto:" className="mt-5">
             [WEDDING TEAM EMAIL]
-          </a>
-          .
+          </p>
+          
         </p>
        
       </div>
@@ -260,9 +260,9 @@ export default function GuestServices() {
 
         .gs-hero-sub {
          
-          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+          // font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           color: #5b7ec9;
-          letter-spacing: 0.06em;
+          // letter-spacing: 0.06em;
           position: relative;
           z-index: 1;
           opacity: 0;
@@ -372,11 +372,11 @@ export default function GuestServices() {
 
         .gs-body {
          
-          font-size: clamp(1.2rem, 2.5vw, 1.15rem);
+          // font-size: clamp(1.2rem, 2.5vw, 1.15rem);
           font-weight: 300;
         
-          line-height: 1.9;
-          letter-spacing: 0.01em;
+          // line-height: 1.9;
+          // letter-spacing: 0.01em;
         }
 
         .gs-link {
@@ -528,7 +528,7 @@ export default function GuestServices() {
           <p className="gs-footer-note">More details will be shared closer to the date.</p>
         </div> */}
 
-        <div className="gs-edge-bottom" />
+        {/* <div className="gs-edge-bottom" /> */}
       </div>
     </>
   );

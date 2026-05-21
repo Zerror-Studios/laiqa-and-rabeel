@@ -16,7 +16,6 @@ const NavBar = () => {
 
   const pathname = usePathname();
 
-  
 
   const [isNavOpen, SetIsNavOpen] = useState(false);
 
@@ -88,22 +87,15 @@ const NavBar = () => {
     }
   };
 
-  // useEffect(() => {
-
-  //   // OTHER PAGES
-  //   if (pathname !== "/") {
-  //     gsap.set(".NavMenuCont", { opacity: 1 });
-      
-  //   }
-  // }, [pathname]);
+  
 
   return (
     <div
       ref={navRef}
-      className="NavMenuCont w-full h-[46px] mt-10 flex gap-50 justify-between fixed top-0 left-0 items-center z-[100] px-20"
+      className="NavMenuCont w-full h-[46px] mt-10 flex gap-40 justify-between fixed top-0 left-0 items-center z-[100] px-10 2xl:px-20 "
     >
       {/* Left */}
-      <div className="w-1/3 h-full RVSPBTN items-center max-2xl:hidden flex justify-between uppercase text-[14px] COLOR_TEXT_RED ">
+      <div className=" w-[45%] h-full  2xl:w-1/3 2xl:h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[14px] COLOR_TEXT_RED ">
         <Link href={`/wedding`}>
           <div
             className={`w-fit h-fit ${pathname === "/wedding" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
@@ -133,11 +125,6 @@ const NavBar = () => {
             FAQs
           </div>
         </Link>
-
-
-        
-
-       
       </div>
 
       {/* Logo */}
@@ -152,8 +139,7 @@ const NavBar = () => {
       </div>
 
       {/* Right */}
-      <div className="w-1/3  h-full RVSPBTN items-center max-2xl:hidden flex justify-between uppercase text-[14px]   COLOR_TEXT_RED">
-        
+      <div className="w-[45%]  h-full  2xl:w-1/3 2xl:h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[13px] gap-2 2xl:gap-0 2xl:text-[14px]   COLOR_TEXT_RED">
         <Link href={`/guestservices`}>
           <div
             className={`w-fit h-fit ${pathname === "/guestservices" && " border-b border-[#044BB2]"}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}
@@ -163,9 +149,8 @@ const NavBar = () => {
             Guests Services
           </div>
         </Link>
-        
-        
-         <Link href={`/explore`}>
+
+        <Link href={`/explore`}>
           <div
             className={`w-fit h-fit ${pathname === "/explore" && " border-b border-[#044BB2]"}  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
           >
@@ -174,7 +159,6 @@ const NavBar = () => {
             Explore Marrakech
           </div>
         </Link>
-       
 
         <Link target="_blank" rel="noopener noreferrer" href={``}>
           <div className="w-fit h-[46px] RVSPBTN max-md:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] text-white COLOR_BG_RED opacity-80 group ">
@@ -189,7 +173,7 @@ const NavBar = () => {
       <div
         onClick={clickCheck}
         htmlFor="check"
-        className=" absolute top-1 right-8 2xl:hidden "
+        className=" absolute top-1 right-8 lg:hidden "
       >
         {isNavOpen == false ? (
           <>
@@ -203,7 +187,7 @@ const NavBar = () => {
       </div>
 
       {/* MOBILENAV */}
-      <div className="w-full flex flex-col 2xl:hidden justify-center text-[1.5rem] leading-[1.5rem] z-100 uppercase gap-4 items-center MOBILENAV h-screen bg-white absolute -top-10 left-[150%] z-[-1]">
+      <div className="w-full flex flex-col lg:hidden justify-center text-[1.5rem] leading-[1.5rem] z-100 uppercase gap-4 items-center MOBILENAV h-screen bg-white absolute -top-10 left-[150%] z-[-1]">
         <Link href={`/`}>
           <div
             onClick={clickCheck}
@@ -234,7 +218,7 @@ const NavBar = () => {
             Wedding Venue
           </div>
         </Link>
-         <Link href={`/faq`}>
+        <Link href={`/faq`}>
           <div
             onClick={clickCheck}
             className={`w-fit h-fit  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
@@ -264,15 +248,10 @@ const NavBar = () => {
             Explore Marrakech
           </div>
         </Link>
-       
 
         {/* BTN */}
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          href={``}
-        >
-          <div className="w-fit h-[46px] 2xl:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] mt-20 text-[white] COLOR_BG_RED">
+        <Link target="_blank" rel="noopener noreferrer" href={``}>
+          <div className="w-fit h-[46px] lg:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] mt-20 text-[white] COLOR_BG_RED">
             RSVP HERE
           </div>
         </Link>
