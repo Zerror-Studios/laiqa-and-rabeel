@@ -9,9 +9,12 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+
+  const pathname = usePathname();
   useEffect(() => {
     const A = gsap.timeline({
       scrollTrigger: {
@@ -91,13 +94,15 @@ export default function Home() {
       "a1",
     );
 
-    A.to(
-      ".NavMenuCont",
-      {
-        opacity: 1,
-      },
-      "<0.2",
-    );
+    // A.to(
+    //   ".NavMenuCont",
+    //   {
+    //     opacity: 1,
+    //   },
+    //   "<0.2",
+    // );
+
+    // ================================================
 
     // ================================================
     const Pre = gsap.timeline();
@@ -157,16 +162,53 @@ export default function Home() {
         // markers: true,
       },
     });
-    B.to('.IMGANUI',{
-      width:'50vw',
-      height:'50vh',
+    B.to(".IMGANUI", {
+      width: "50vw",
+      height: "50vh",
       // duration:1,
-      ease:'none'
-    })
+      ease: "none",
+    });
+  }, []);
 
+ useEffect(() => {
+  // OTHER PAGES
+  if (pathname !== "/") {
+    gsap.set(".NavMenuCont", {
+      opacity: 1,
+    });
+
+    return;
+  }
+
+  // HOME PAGE
+  gsap.set(".NavMenuCont", {
+    opacity: 0,
   });
 
+  const trigger = ScrollTrigger.create({
+    start: 80,
 
+    onUpdate: (self) => {
+      if (self.scroll() > 80) {
+        gsap.to(".NavMenuCont", {
+          opacity: 1,
+          duration: 0.2,
+          overwrite: true,
+        });
+      } else {
+        gsap.to(".NavMenuCont", {
+          opacity: 0,
+          duration: 0.2,
+          overwrite: true,
+        });
+      }
+    },
+  });
+
+  return () => {
+    trigger.kill();
+  };
+}, [pathname]);
 
   return (
     <>
@@ -228,16 +270,12 @@ export default function Home() {
       <TextAnimation />
       <Countdown />
 
-      <div className="w-full h-[150vh] relative NEFOC">
-        <div className="w-full h-screen sticky top-0 left-0 flex  justify-center items-center">
-          <div className="w-full h-screen IMGANUI overflow-hidden  mx-auto">
-            <img
-              src={`/lastP.png`}
-              className="w-full h-full max-md:object-[33%_0%] object-cover"
-              alt="IMG"
-            />
-          </div>
-        </div>
+      <div className="w-2/3 h-2/3 sm:w-1/2 sm:h-1/2 overflow-hidden  mx-auto mb-[8vh] sm:mb-[20vh]">
+        <img
+          src={`/lastP.png`}
+          className="w-full h-full max-md:object-[33%_0%] object-cover"
+          alt="IMG"
+        />
       </div>
     </>
   );

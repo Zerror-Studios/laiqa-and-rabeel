@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
@@ -200,7 +199,8 @@ const ActivitiesGrid = () => {
       );
     }
 
-    const categoryHeadings = sectionRef.current.querySelectorAll(".category-heading");
+    const categoryHeadings =
+      sectionRef.current.querySelectorAll(".category-heading");
     categoryHeadings.forEach((heading) => {
       gsap.fromTo(
         heading,
@@ -221,32 +221,35 @@ const ActivitiesGrid = () => {
 
   return (
     <div ref={sectionRef} className="relative py-[20vh] max-md:pb-[10vh]">
-      <div className ="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
-        <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full object-cover object-center opacity-50" />
+      <div className="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
+        <img
+          src={`/allPageImg/sky.png`}
+          alt="img"
+          className="w-full h-full object-cover object-center opacity-50"
+        />
       </div>
       <div className="w-full h-fit flex flex-col justify-center items-center pb-[10vh] ">
         <p className="uppercase Font_YV COLOR_TEXT_RED contA6"></p>
-        <h4 className="text-[8vw] leading-[8vw] max-md:text-[12vw] max-md:leading-[12vw] Font_Q contA6 COLOR_TEXT_RED text-center uppercase">
+        {/* <h4 className="text-[8vw] leading-[8vw] max-md:text-[12vw] max-md:leading-[12vw] Font_Q contA6 COLOR_TEXT_RED text-center uppercase">
           Marrakech
-        </h4>
+        </h4> */}
         <div className="w-[90%] max-w-[740px] flex flex-col contA6 justify-center items-center gap-6">
           <div className="text-[#395238] text-[1.1vw] leading-[1.1vw] max-md:text-[18px] max-md:leading-[18px] contA6 COLOR_TEXT_RED text-center Font_YV gap-2">
             <p>
-              The Red City. Rose-coloured walls, ancient souks, and a city where
-            Berber, Arab, and French influences meet in a way that feels
-            entirely its own.
+              "A visit to Marrakech was a great shock to me. This city taught me
+              color." — Yves Saint Laurent <br /><br /> Marrakech is a living mood board —
+              pink walls under endless blue skies, lush green palm trees, and
+              the rich hues of spices and textiles. A city where creativity,
+              culture, and heritage flow seamlessly. <br /><br /> To help you make the most
+              of your time here, we've put together a list of our favourite
+              places to explore. For bookings, please reach out to our
+              experiences partner:
             </p>
-            <p>
-              <br />
-              To help you make the most of your time here, we've put together a
-              list of our favourite places to explore. For bookings, please reach
-              out to our experiences partner:
-            </p>
-            <br />
-            <p>
 
-            Marrakech Travel Experts — Driss Zidani Alaoui{" "}
-            </p>
+            <br /><br />
+
+            <p>Marrakech Travel Experts — Driss Zidani Alaoui </p>
+            <br />
             <p>
               <a href="">driss@marrakeshtravelexperts.com</a> |{" "}
               <a href=""> +212 661 222 557</a>

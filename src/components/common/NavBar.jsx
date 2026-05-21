@@ -88,35 +88,14 @@ const NavBar = () => {
     }
   };
 
-  useLayoutEffect(() => {
-    // kill old triggers
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  // useEffect(() => {
 
-    // OTHER PAGES
-    if (pathname !== "/") {
-      gsap.set(".NavMenuCont", { opacity: 1 });
-      return;
-    }
-
-    // HOME PAGE
-    gsap.set(".NavMenuCont", { opacity: 0 });
-
-    const tween = gsap.to(".NavMenuCont", {
-      opacity: 1,
-      ease: "linear",
-      scrollTrigger: {
-        trigger: navRef.current,
-        start: "top top",
-        end: "top -50%",
-        scrub: true,
-      },
-    });
-
-    return () => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-    };
-  }, [pathname]);
+  //   // OTHER PAGES
+  //   if (pathname !== "/") {
+  //     gsap.set(".NavMenuCont", { opacity: 1 });
+      
+  //   }
+  // }, [pathname]);
 
   return (
     <div
