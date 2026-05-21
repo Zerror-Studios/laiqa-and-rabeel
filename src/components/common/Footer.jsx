@@ -81,7 +81,7 @@ const Footer = () => {
 
           {/* Email */}
           <a
-            href="mailto:laiqaandrabeel@gmail.com"
+            href="wedding@laiqarabeel.com"
             className="group/contact w-fit max-lg:mx-auto flex items-center gap-2 transition-all duration-200 ease-in-out hover:translate-x-1"
           >
             {/* mail icon */}
@@ -93,7 +93,7 @@ const Footer = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
             </svg>
             <span className="relative flex flex-col COLOR_TEXT_RED Font_YV  text-[16px] cursor-pointer select-none">
-              laiqaandrabeel@gmail.com
+              wedding@laiqarabeel.com
               <span className="h-[1px] w-0 COLOR_BG_RED transition-all duration-200 ease-in-out group-hover/contact:w-full block" />
             </span>
           </a>
@@ -117,7 +117,7 @@ const Footer = () => {
           </a>
 
           {/* Phone 2 */}
-          <a
+          {/* <a
             href="tel:+919310069102"
             className="group/contact w-fit max-lg:mx-auto flex items-center gap-2 transition-all duration-200 ease-in-out hover:translate-x-1"
           >
@@ -132,7 +132,7 @@ const Footer = () => {
               +91 93100 69102
               <span className="h-[1px] w-0 COLOR_BG_RED transition-all duration-200 ease-in-out group-hover/contact:w-full block" />
             </span>
-          </a>
+          </a> */}
         </div>
       </div>
 

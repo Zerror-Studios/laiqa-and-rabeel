@@ -138,7 +138,7 @@ export default function FAQ() {
                 onClick={() => toggleFAQ(faq.id)}
                 className="group w-full flex items-center justify-between text-left"
               >
-                <span className="tracking-wide uppercase COLOR_TEXT_RED Font_YV text-[1.5rem] max-md:text-[1.1rem] md:text-base">
+                <span className={`tracking-wide uppercase  max-sm:w-[85%]  COLOR_TEXT_RED Font_YV text-[1.5rem] max-md:text-[1.1rem] md:text-base`}>
                   {faq.question}
                 </span>
 

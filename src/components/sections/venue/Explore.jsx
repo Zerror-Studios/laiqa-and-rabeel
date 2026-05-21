@@ -248,7 +248,7 @@ const ActivitiesGrid = () => {
               </p>{" "}
             </h3>
             <p className="mt-4">
-              "Marrakech is a living mood board — pink walls under endless blue
+              Marrakech is a living mood board — pink walls under endless blue
               skies, lush green palm trees, and the rich hues of spices and
               textiles. A city where creativity, culture, and heritage flow
               seamlessly.To help you make the most of your time here, we've put
