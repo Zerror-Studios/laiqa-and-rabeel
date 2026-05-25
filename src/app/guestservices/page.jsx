@@ -14,15 +14,16 @@ const TABS = [
           Transportation
         </h2>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          Transfers will be arranged for all guests between the hotels and wedding events, including airport shuttles.
+          Transfers will be arranged for all guests between the hotels and wedding events, including airport shuttles
         </p>
         <p className="gs-body COLOR_TEXT_RED Font_YV">
-          The closest airport is Marrakech Menara Airport (RAK), approximately 25 minutes from the hotel. Casablanca (CMN) is also a good option for those flying in from further afield — from there, a short domestic flight or a 2.5-hour drive will get you to Marrakech
+         The closest airport is Marrakech Menara Airport (RAK), approximately 25 minutes from the hotel. Casablanca (CMN) is also a good option for those flying in from further afield — from there, a short domestic flight or a 2.5-hour drive will get you to Marrakech.
+
         </p>
         <div className="gs-body COLOR_TEXT_RED Font_YV">
           For any questions about transportation, please reach out to our planning team at{" "}
           <p href="mailto:" className="mt-5">
-            [WEDDING TEAM EMAIL]
+            wedding@laiqarabeel.com
           </p>
           
         </div>

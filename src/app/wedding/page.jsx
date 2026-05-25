@@ -139,7 +139,7 @@ const page = () => {
             </div>
             <div className="COLOR_TEXT_RED Font_Q w-fit h-fit tracking-tight overflow-hidden">
               <p className="Font_YV max-w-[600px] MainTI w-[90%] mx-auto pb-5 mt-4 flex justify-center items-center">
-                Join us for two days in Marrakech, among the olive groves and Atlas Mountains, beginning with the Mehendi and Sangeet on Saturday, followed by the Wedding Ceremony and Reception on Sunday.
+                Join us for three days in Marrakech, among the olive groves and Atlas Mountains, beginning with the Mehendi and Sangeet on Saturday, followed by the Wedding Ceremony and Reception on Sunday, and a farewell breakfast on Monday.
               </p>
             </div>
           </div>
