@@ -160,7 +160,7 @@ const NavBar = () => {
           </div>
         </Link>
 
-        <Link target="_blank" rel="noopener noreferrer" href={``}>
+        <Link target="_blank" rel="noopener noreferrer" href={`https://laiqa-and-rabeel.rsvpify.com/`}>
           <div className="w-fit h-[46px] RVSPBTN max-md:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] text-white COLOR_BG_RED opacity-80 group ">
             <div className="w-fit text-[#1a6bbb] ">
               RSVP
@@ -250,7 +250,7 @@ const NavBar = () => {
         </Link>
 
         {/* BTN */}
-        <Link target="_blank" rel="noopener noreferrer" href={``}>
+        <Link target="_blank" rel="noopener noreferrer" href={`https://laiqa-and-rabeel.rsvpify.com/`}>
           <div className="w-fit h-[46px] lg:hidden select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] mt-20 text-[white] COLOR_BG_RED">
             RSVP HERE
           </div>
