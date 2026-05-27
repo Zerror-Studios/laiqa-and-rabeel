@@ -270,7 +270,7 @@ export default function Home() {
 
       <div className="w-2/3 h-2/3 sm:w-1/2 sm:h-1/2 overflow-hidden  mx-auto mb-[8vh] sm:mb-[20vh]">
         <img
-          src={`/lastP.png`}
+          src={`/lastP.jpeg`}
           className="w-full h-full max-md:object-[33%_0%] object-cover"
           alt="IMG"
         />
