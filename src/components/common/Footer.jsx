@@ -99,7 +99,7 @@ const Footer = () => {
           </a>
 
           {/* Phone 1 */}
-          <a
+          {/* <a
             href="tel:+919358800614"
             className="group/contact w-fit max-lg:mx-auto flex items-center gap-2 transition-all duration-200 ease-in-out hover:translate-x-1"
           >
@@ -114,7 +114,7 @@ const Footer = () => {
               +91 93588 00614
               <span className="h-[1px] w-0 COLOR_BG_RED transition-all duration-200 ease-in-out group-hover/contact:w-full block" />
             </span>
-          </a>
+          </a> */}
 
           {/* Phone 2 */}
           {/* <a
