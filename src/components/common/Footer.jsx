@@ -82,12 +82,12 @@ const Footer = () => {
           {/* Email */}
           <a
             href="wedding@laiqarabeel.com"
-            className="group/contact w-fit max-lg:mx-auto flex items-center gap-2 transition-all duration-200 ease-in-out hover:translate-x-1"
+            className="group/contact w-fit max-lg:mx-auto flex items-center justify-center gap-2 transition-all duration-200 ease-in-out hover:translate-x-1"
           >
             {/* mail icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-[14px] h-[14px] COLOR_TEXT_RED opacity-0 -translate-x-2 transition-all duration-200 ease-in-out group-hover/contact:opacity-100 group-hover/contact:translate-x-0 shrink-0"
+              className="w-[14px] h-[14px] COLOR_TEXT_RED opacity-100  translate-y-[15%]"
               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
@@ -145,7 +145,7 @@ const Footer = () => {
 
       {/* ── Copyright bar ── */}
       <div className="px-10 max-md:px-6 py-5 flex max-md:flex-col max-md:gap-2 items-center justify-center">
-        <span className="Font_Q COLOR_TEXT_RED text-[16px] tracking-[0.12em] max-sm:text-center opacity-100">
+        <span className=" font-serif COLOR_TEXT_RED text-[16px] tracking-[0.12em] max-sm:text-center opacity-100">
           © {new Date().getFullYear()} Laiqa &amp; Rabeel. <br className="sm:hidden" /> All rights reserved.
         </span>
       </div>
