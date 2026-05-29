@@ -252,7 +252,7 @@ const NavBar = () => {
         {/* BTN */}
         <Link target="_blank" rel="noopener noreferrer" href={`https://laiqa-and-rabeel.rsvpify.com/`}>
           <div className="w-fit h-[46px] bg-[#044BB2] select-none cursor-pointer flex flex-col justify-center items-center px-[17px] py-[6px] text-[16px] mt-20 text-[white] ">
-            RSVP HERE
+            RSVP
           </div>
         </Link>
       </div>
