@@ -92,7 +92,7 @@ const NavBar = () => {
   return (
     <div
       ref={navRef}
-      className="NavMenuCont w-full h-[46px] mt-10 flex gap-40 justify-between fixed top-0 left-0 items-center z-[100] px-10 2xl:px-20 "
+      className="NavMenuCont w-full h-[46px] mt-10 flex gap-40 justify-between fixed top-0 left-0 items-center z-[900] px-10 2xl:px-20  "
     >
       {/* Left */}
       <div className=" w-[45%] h-full  2xl:w-1/3 2xl:h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[14px] COLOR_TEXT_RED ">
@@ -225,7 +225,7 @@ const NavBar = () => {
           >
             {" "}
             <div className=" absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out "></div>
-            FAQ
+            FAQs
           </div>
         </Link>
         <Link href={`/guestservices`}>
