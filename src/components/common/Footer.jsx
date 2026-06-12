@@ -111,7 +111,7 @@ const Footer = () => {
 
       {/* ── Copyright bar ── */}
       <div className="px-10 max-md:px-6 py-5 flex max-md:flex-col max-md:gap-2 items-center justify-center">
-        <span className=" font-serif COLOR_TEXT_RED text-[16px] tracking-[0.12em] max-sm:text-center opacity-100">
+        <span className=" Font_Q  font-medium COLOR_TEXT_RED text-[16px] tracking-[0.12em] max-sm:text-center opacity-100">
           © {new Date().getFullYear()} Laiqa &amp; Rabeel. <br className="sm:hidden" /> All rights reserved.
         </span>
       </div>
