@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Wedding Itinerary", href: "/wedding" },
+  { label: "Wedding Events", href: "/wedding" },
   { label: "Wedding Venue", href: "/venue" },
   { label: "Guest Services", href: "/guestservices" },
   { label: "FAQ's", href: "faq" },
