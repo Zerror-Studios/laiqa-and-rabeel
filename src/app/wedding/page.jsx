@@ -156,10 +156,13 @@ const page = () => {
 
         {/* Cards Section */}
         <div className="w-full h-fit COLOR_BG_RED relative z-100 flex max-md:flex-col p-20 max-md:gap-10 gap-5 px-10 justify-center items-center">
+
+          <p className=" Font_Q capitalize italic COLOR_TEXT_RED text-[2vw] leading-[2.5vw]  py-5 sm:hidden text-center ">Click on the cards below for more information on each event</p>
+
           <CardGroup>
 
             {/* T1 — Mehndi Lunch */}
-            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%]">
+            <FlipCard className="w-1/4 h-[43vh] max-md:h-[50vh] max-md:w-[90%] ">
               {/* FRONT */}
               <div className="absolute inset-0 bg-white border border-[#044BB2] py-10 px-5 flex flex-col justify-between">
                 <div className="w-full h-fit flex flex-col max-md:items-center">
