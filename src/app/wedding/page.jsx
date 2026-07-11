@@ -154,10 +154,12 @@ const page = () => {
           <div className="pointer-events-none absolute bottom-[0%] left-0 w-full h-[30vh] bg-gradient-to-b from-transparent via-[#ffffff]/60 to-[#ffffff] z-100" />
         </div>
 
+          <p className=" Font_Q capitalize italic COLOR_TEXT_RED text-[2vw] leading-[2.5vw]  mt-10 max-sm:hidden sm:visible sm:w-[400px] mx-auto text-center ">Click on the cards below for more information on each event</p>
+
         {/* Cards Section */}
         <div className="w-full h-fit COLOR_BG_RED relative z-100 flex max-md:flex-col p-20 max-md:gap-10 gap-5 px-10 justify-center items-center">
 
-          <p className=" Font_Q capitalize italic COLOR_TEXT_RED text-[2vw] leading-[2.5vw]  py-5 sm:hidden text-center ">Click on the cards below for more information on each event</p>
+          <p className=" Font_Q capitalize italic COLOR_TEXT_RED text-[2vw] leading-[2.5vw]  py-5 sm:hidden sm:w-[600px] text-center ">Click on the cards below for more information on each event</p>
 
           <CardGroup>
 
