@@ -139,7 +139,7 @@ const page = () => {
             </div>
             <div className="COLOR_TEXT_RED Font_Q w-fit h-fit tracking-tight overflow-hidden">
               <p className="Font_YV max-w-[600px] MainTI w-[90%] mx-auto pb-5 mt-4 flex justify-center items-center">
-                Join us for three days in Marrakech, among the olive groves and Atlas Mountains, beginning with the Mehendi and Sangeet on Saturday, followed by the Wedding Ceremony and Reception on Sunday, and a farewell breakfast on Monday.
+                In Marrakech, among the olive groves and Atlas Mountains, beginning with the Mehendi and Sangeet on Saturday, followed by the Wedding Ceremony and Reception on Sunday, and a farewell breakfast on Monday.
               </p>
             </div>
           </div>
@@ -291,7 +291,7 @@ const page = () => {
               <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-5">
                 <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
                 <p className="text-[2vw] max-md:text-[4vw] text-center Font_YV">
-                  Timing ~ 11:00 AM<br /><br />
+                  Timing ~ 10:00 AM<br /><br />
                   The Terraces<br /><br />
                   A final farewell over breakfast on the Terrace
                 </p>
