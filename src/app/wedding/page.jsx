@@ -494,7 +494,7 @@ const page = () => {
                 <div className="absolute inset-0 text-[#044BB2] overflow-hidden flex items-center justify-center p-6">
                   <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full absolute top-0 left-0 object-cover z-[-1] opacity-50 object-center" />
                   <p className="text-[1.4vw] max-md:text-[4vw] text-center Font_YV">
-                    Timing ~ 12:00 PM <br /><br />
+                    Timing ~ 1:00 PM <br /><br />
                     Main Pool & Orchards<br /><br />
                     Henna, lunch, and an afternoon in the orchards.
                   </p>
