@@ -7,7 +7,7 @@ const faqs = [
     id: 1,
     question: "When should I arrive?",
     answer:
-      `We recommend arriving by the morning of Saturday, November 14. Celebrations begin at noon.
+      `We recommend arriving by the morning of Saturday, November 14. Celebrations begin at 1:00 PM onwards.
 `,
   },
   {
