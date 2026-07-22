@@ -20,7 +20,7 @@ const faqs = [
   {
     id: 3,
     question: "When should I depart?",
-    answer: `The weekend closes with a Farewell Breakfast on Monday, November 16. Guests are welcome to depart that afternoon.`,
+    answer: `You’re welcome to depart on Monday, November 16, or whenever it best suits your travel plans.`,
   },
   {
     id: 4,
