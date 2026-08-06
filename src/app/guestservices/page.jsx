@@ -1,7 +1,63 @@
+
 // // "use client";
 
 // // import { useEffect, useRef, useState } from "react";
 // // import { gsap } from "gsap";
+
+// // const EVENTS = [
+// //   {
+// //     id: "mehendi",
+// //     day: "Saturday, November 14th",
+// //     time: "12:00 PM",
+// //     venue: "Main Pool & Orchards",
+// //     name: "Mehendi",
+// //     theme: "Golden Hour",
+// //     dressCode: "Festive Fusion",
+// //     description:
+// //       "An afternoon of henna, music, and sun. Wear shades of orange and yellow in festive fusion: think embroidered co-ord sets, kurtas, and flowy silhouettes that move easily.",
+// //     colors: ["#E08D3C", "#D9531E", "#E8C547", "#D8CBB0"],
+// //     imgURL: `/imgs/MEHENDI.png`,
+// //   },
+// //   {
+// //     id: "sangeet",
+// //     day: "Saturday, November 14th",
+// //     time: "7:30 PM",
+// //     venue: "Secret Garden",
+// //     name: "Sangeet",
+// //     theme: "Jewels & Metallics",
+// //     dressCode: "Cocktail Glamour",
+// //     description:
+// //       "The night turns up — dress in rich jewel tones or metallics with cocktail glamour in mind: sequins, shimmer, and statement pieces welcome. Comfortable enough to dance in is the only rule.",
+// //     colors: ["#1F5C3E", "#6B3FA0", "#2A3F8F", "#A32357"],
+// //     imgURL: `/imgs/SANGEET.png`,
+// //   },
+// //   {
+// //     id: "nikkah",
+// //     day: "Sunday, November 15th",
+// //     time: "12:30 PM",
+// //     venue: "Grand Canal",
+// //     name: "Nikkah",
+// //     theme: "Pastels in Bloom",
+// //     dressCode: "South Asian Traditional",
+// //     description:
+// //       "A ceremony in soft color. Choose South Asian traditional wear in pastels: sarees, lehengas, salwar kameez, sherwanis, or kurta sets in beige, blush, sage, or powder blue.",
+// //     colors: ["#C9A876", "#E8B4C8", "#B8C99A", "#A9C7E0"],
+// //     imgURL: `/imgs/NIKKAH.png`,
+// //   },
+// //   {
+// //     id: "reception",
+// //     day: "Sunday, November 15th",
+// //     time: "7:30 PM",
+// //     venue: "The Courtyard",
+// //     name: "Reception",
+// //     theme: "Timeless Formal",
+// //     dressCode: "Western Formal",
+// //     description:
+// //       "The final evening calls for floor length gowns for women, black tuxedos or suits for men. Kindly refrain from wearing red, as it is reserved for the bride.",
+// //     colors: [],
+// //     imgURL: `/imgs/RECEPTION.png`,
+// //   },
+// // ];
 
 // // const TABS = [
 // //   {
@@ -14,20 +70,22 @@
 // //           Transportation
 // //         </h2>
 // //         <p className="gs-body COLOR_TEXT_RED Font_YV">
-// //           Transfers will be arranged for all guests between the hotels and wedding events, including airport shuttles
+// //           Transfers will be arranged for all guests between the hotels and
+// //           wedding events, including airport shuttles
 // //         </p>
 // //         <p className="gs-body COLOR_TEXT_RED Font_YV">
-// //          The closest airport is Marrakech Menara Airport (RAK), approximately 25 minutes from the hotel. Casablanca (CMN) is also a good option for those flying in from further afield — from there, a short domestic flight or a 2.5-hour drive will get you to Marrakech.
-
+// //           The closest airport is Marrakech Menara Airport (RAK), approximately
+// //           25 minutes from the hotel. Casablanca (CMN) is also a good option for
+// //           those flying in from further afield — from there, a short domestic
+// //           flight or a 2.5-hour drive will get you to Marrakech.
 // //         </p>
 // //         <div className="gs-body COLOR_TEXT_RED Font_YV">
-// //           For any questions about transportation, please reach out to our planning team at{" "}
+// //           For any questions about transportation, please reach out to our
+// //           planning team at{" "}
 // //           <p href="mailto:" className="mt-5">
 // //             wedding@laiqarabeel.com
 // //           </p>
-
 // //         </div>
-
 // //       </div>
 // //     ),
 // //   },
@@ -38,10 +96,66 @@
 // //     content: (
 // //       <div className="gs-content">
 // //         <h2 className="gs-section-title COLOR_TEXT_RED Font_Q">Style Guide</h2>
-// //         <p className="gs-body COLOR_TEXT_RED Font_YV">
-// //           A wardrobe guide covering dress codes and outfit inspiration for each event will be shared closer to the date.
-
+// //         <p className="gs-body COLOR_TEXT_RED Font_YV gs-wardrobe-intro">
+// //           To help with outfit planning, we&apos;ve put together this style guide
+// //           for each celebration. Think of it as inspiration — we&apos;d love for
+// //           you to add your own personal touch. We can&apos;t wait to celebrate
+// //           with you!
 // //         </p>
+
+// //         <div className="gs-events-grid">
+// //           {EVENTS.map((event) => (
+// //             <div className="gs-event-card" key={event.id}>
+// //               {event.imgURL && (
+// //                 <div className="gs-event-img-wrap flex justify-center items-center">
+// //                   <img
+// //                     src={event.imgURL}
+// //                     alt={event.name}
+// //                     className=" w-[80%] object-cover object-center"
+// //                     loading="lazy"
+// //                   />
+// //                 </div>
+// //               )}
+
+// //               <div className="gs-event-header">
+// //                 <span className=" COLOR_TEXT_RED Font_YV">
+// //                   {event.day} &middot; {event.time} &middot; {event.venue}
+// //                 </span>
+// //                 <h3 className="gs-event-name COLOR_TEXT_RED Font_Q">
+// //                   {event.name}
+// //                 </h3>
+// //               </div>
+
+// //               {event.colors.length > 0 && (
+// //                 <div className="gs-swatches" aria-hidden="true">
+// //                   {event.colors.map((color, idx) => (
+// //                     <span
+// //                       key={idx}
+// //                       className="gs-swatch"
+// //                       style={{ backgroundColor: color }}
+// //                     />
+// //                   ))}
+// //                 </div>
+// //               )}
+
+// //               <p className="  COLOR_TEXT_RED Font_YV font-light">
+// //                 Dress Code: <span>{event.dressCode}</span>
+// //               </p>
+// //               <p className="gs-event-name uppercase COLOR_TEXT_RED Font_Q mt-5">
+// //                 {event.theme}
+// //               </p>
+// //               <p className=" COLOR_TEXT_RED Font_YV font-light opacity-90">
+// //                 {event.description}
+// //               </p>
+// //             </div>
+// //           ))}
+// //         </div>
+
+// //         <a href="/PDF/LRWG.pdf" target="blank">
+// //           <div className=" px-5 py-2 bg-[#044BB2] hover:bg-[#07357a] sm:w-fit mt-2 mx-auto Font_YV flex justify-center items-center uppercase cursor-pointer text-white">
+// //             View PDF
+// //           </div>
+// //         </a>
 // //       </div>
 // //     ),
 // //   },
@@ -55,9 +169,9 @@
 // //           Hair & Makeup
 // //         </h2>
 // //         <p className="gs-body COLOR_TEXT_RED Font_YV">
-
-// // A private salon offering hair and makeup services will be available on November 14th and 15th, located at The Oberoi Marrakech. Booking details will be shared closer to the date.
-
+// //           A private salon offering hair and makeup services will be available on
+// //           November 14th and 15th, located at The Oberoi Marrakech. Booking
+// //           details will be shared closer to the date.
 // //         </p>
 // //       </div>
 // //     ),
@@ -162,6 +276,8 @@
 // //       <style>{`
 // //         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
 
+        
+
 // //         /* ── Page shell ── */
 // //         .gs-page {
 // //           min-height: 100vh;
@@ -213,7 +329,7 @@
 // //         }
 
 // //         .gs-hero-eyebrow {
-
+         
 // //           font-size: clamp(0.6rem, 1.5vw, 0.7rem);
 // //           letter-spacing: 0.3em;
 // //           text-transform: uppercase;
@@ -245,7 +361,7 @@
 // //         }
 
 // //         .gs-hero-title {
-
+         
 // //           font-size: clamp(2.6rem, 8vw, 6rem);
 // //           font-weight: 400;
 // //           letter-spacing: -0.025em;
@@ -256,8 +372,9 @@
 // //           opacity: 0;
 // //         }
 
-// //         .gs-hero-sub {
 
+// //         .gs-hero-sub {
+         
 // //           // font-size: clamp(0.95rem, 2.5vw, 1.1rem);
 // //           color: #5b7ec9;
 // //           // letter-spacing: 0.06em;
@@ -308,10 +425,10 @@
 // //         }
 
 // //         .gs-tab-num {
-
+         
 // //           font-size: clamp(1rem, 1rem, 1rem);
 // //           letter-spacing: 0.1em;
-
+          
 // //           font-weight: 500;
 // //           line-height: 1;
 // //           margin-top: 2px;
@@ -320,12 +437,12 @@
 // //         .gs-tab.is-active .gs-tab-num {  }
 
 // //         .gs-tab-label {
-
+         
 // //           font-size: clamp(0.8rem, 2vw, 0.95rem);
 // //           letter-spacing: 0.09em;
 // //           text-transform: uppercase;
 // //           font-weight: 500;
-
+          
 // //           transition: color 0.3s;
 // //           white-space: nowrap;
 // //         }
@@ -357,10 +474,10 @@
 // //         }
 
 // //         .gs-section-title {
-
+         
 // //           font-size: clamp(1.7rem, 4vw, 2.8rem);
 // //           font-weight: 400;
-
+      
 // //           letter-spacing: -0.015em;
 // //           line-height: 1.1;
 // //           padding-bottom: 0.65rem;
@@ -369,10 +486,10 @@
 // //         }
 
 // //         .gs-body {
-
+         
 // //           // font-size: clamp(1.2rem, 2.5vw, 1.15rem);
 // //           font-weight: 300;
-
+        
 // //           // line-height: 1.9;
 // //           // letter-spacing: 0.01em;
 // //         }
@@ -393,6 +510,119 @@
 // //           margin: 0.4rem 0;
 // //         }
 
+// //         /* ── Style Guide / Wardrobe Planner ── */
+// //         .gs-wardrobe-intro {
+// //           max-width: 620px;
+// //           margin: 0 auto 0.6rem;
+// //         }
+
+// //         .gs-events-grid {
+// //           display: grid;
+// //           grid-template-columns: repeat(2, 1fr);
+// //           gap: 1.25rem;
+// //           text-align: left;
+// //         }
+
+// //         .gs-event-card {
+// //           border: 1px solid #e8f0fe;
+          
+// //           padding: 1.6rem 1.5rem;
+// //           display: flex;
+// //           flex-direction: column;
+// //           gap: 0.55rem;
+// //           background: rgba(255, 255, 255, 0.55);
+// //           transition: border-color 0.25s, transform 0.25s;
+// //         }
+// //         .gs-event-card:hover {
+// //           border-color: #bfdbfe;
+// //           transform: translateY(-2px);
+// //         }
+
+// //         /* ── Event image ── */
+// //         .gs-event-img-wrap {
+// //           width: 100%;
+// //           aspect-ratio: 4 / 3;
+// //           overflow: hidden;
+// //           margin: -1.6rem -1.5rem 0.6rem;
+// //           width: calc(100% + 3rem);
+// //         }
+
+// //         .gs-event-img {
+// //           width: 100%;
+// //           height: 100%;
+// //           object-fit: cover;
+// //           object-position: center;
+// //           display: block;
+// //           transition: transform 0.4s ease;
+// //         }
+
+// //         .gs-event-card:hover .gs-event-img {
+// //           transform: scale(1.04);
+// //         }
+
+// //         .gs-event-header {
+// //           display: flex;
+// //           flex-direction: column;
+// //           gap: 0.3rem;
+// //           margin-bottom: 0.2rem;
+// //         }
+
+// //         .gs-event-date {
+// //           font-size: 0.72rem;
+// //           letter-spacing: 0.12em;
+// //           text-transform: uppercase;
+// //           color: #60a5fa;
+// //         }
+
+// //         .gs-event-name {
+// //           font-size: clamp(1.3rem, 3vw, 1.7rem);
+// //           font-weight: 400;
+// //           letter-spacing: 0.02em;
+// //         }
+
+// //         .gs-swatches {
+// //           display: flex;
+// //           gap: 8px;
+// //           margin: 0.2rem 0 0.1rem;
+// //         }
+
+// //         .gs-swatch {
+// //           width: 22px;
+// //           height: 22px;
+// //           border-radius: 50%;
+// //           display: inline-block;
+// //           box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset;
+// //         }
+
+// //         .gs-dresscode {
+// //           font-size: 0.85rem;
+// //           letter-spacing: 0.03em;
+// //           text-transform: uppercase;
+// //           opacity: 0.75;
+// //         }
+// //         .gs-dresscode span {
+// //           font-weight: 500;
+// //           opacity: 1;
+// //         }
+
+// //         .gs-event-theme {
+// //           font-size: clamp(1rem, 2.4vw, 1.2rem);
+// //           font-weight: 500;
+// //           letter-spacing: 0.03em;
+// //         }
+
+// //         .gs-event-desc {
+// //           font-size: 0.95rem;
+// //           font-weight: 300;
+// //           line-height: 1.65;
+// //         }
+
+// //         @media (max-width: 640px) {
+// //           .gs-events-grid {
+// //             grid-template-columns: 1fr;
+// //           }
+// //         }
+
 // //         /* ── Footer ── */
 // //         .gs-footer {
 // //           display: flex;
@@ -409,7 +639,7 @@
 // //         }
 // //         .gs-footer-ornament-line { width: 32px; height: 1px; background: #dbeafe; }
 // //         .gs-footer-note {
-
+         
 // //           font-size: 0.9rem;
 // //           color: #93c5fd;
 // //           font-style: italic;
@@ -454,10 +684,13 @@
 // //       `}</style>
 
 // //       <div className="gs-page pt-[10vh] relative">
-
-// //       <div className ="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
-// //         <img src={`/allPageImg/sky.png`} alt="img" className="w-full h-full object-cover object-center opacity-50" />
-// //       </div>
+// //         <div className="w-full h-full absolute top-0 left-0 z-[-1] overflow-hidden">
+// //           <img
+// //             src={`/allPageImg/sky.png`}
+// //             alt="img"
+// //             className="w-full h-full object-cover object-center opacity-50"
+// //           />
+// //         </div>
 
 // //         <div className="gs-edge-top" />
 
@@ -532,6 +765,7 @@
 // //   );
 // // }
 
+
 // "use client";
 
 // import { useEffect, useRef, useState } from "react";
@@ -549,7 +783,7 @@
 //     description:
 //       "An afternoon of henna, music, and sun. Wear shades of orange and yellow in festive fusion: think embroidered co-ord sets, kurtas, and flowy silhouettes that move easily.",
 //     colors: ["#E08D3C", "#D9531E", "#E8C547", "#D8CBB0"],
-//     imgURL : `/imgs/MEHENDI.png`,
+//     imgURL: `/imgs/MEHENDI.png`,
 //   },
 //   {
 //     id: "sangeet",
@@ -562,7 +796,7 @@
 //     description:
 //       "The night turns up — dress in rich jewel tones or metallics with cocktail glamour in mind: sequins, shimmer, and statement pieces welcome. Comfortable enough to dance in is the only rule.",
 //     colors: ["#1F5C3E", "#6B3FA0", "#2A3F8F", "#A32357"],
-//     imgURL : `/imgs/SANGEET.png`,
+//     imgURL: `/imgs/SANGEET.png`,
 //   },
 //   {
 //     id: "nikkah",
@@ -575,8 +809,7 @@
 //     description:
 //       "A ceremony in soft color. Choose South Asian traditional wear in pastels: sarees, lehengas, salwar kameez, sherwanis, or kurta sets in beige, blush, sage, or powder blue.",
 //     colors: ["#C9A876", "#E8B4C8", "#B8C99A", "#A9C7E0"],
-//     imgURL : `/imgs/NIKKAH.png`
-    
+//     imgURL: `/imgs/NIKKAH.png`,
 //   },
 //   {
 //     id: "reception",
@@ -589,7 +822,7 @@
 //     description:
 //       "The final evening calls for floor length gowns for women, black tuxedos or suits for men. Kindly refrain from wearing red, as it is reserved for the bride.",
 //     colors: [],
-//     imgURL : `/imgs/RECEPTION.png`
+//     imgURL: `/imgs/RECEPTION.png`,
 //   },
 // ];
 
@@ -640,6 +873,17 @@
 //         <div className="gs-events-grid">
 //           {EVENTS.map((event) => (
 //             <div className="gs-event-card" key={event.id}>
+//               {event.imgURL && (
+//                 <div className="gs-event-img-wrap flex justify-center items-center">
+//                   <img
+//                     src={event.imgURL}
+//                     alt={event.name}
+//                     className=" w-[80%] object-cover object-center"
+//                     loading="lazy"
+//                   />
+//                 </div>
+//               )}
+
 //               <div className="gs-event-header">
 //                 <span className=" COLOR_TEXT_RED Font_YV">
 //                   {event.day} &middot; {event.time} &middot; {event.venue}
@@ -726,6 +970,15 @@
 //   };
 
 //   useEffect(() => {
+//     // Deep-link support: /guestservices?tab=style-guide opens that tab directly
+//     const params = new URLSearchParams(window.location.search);
+//     const tabParam = params.get("tab");
+//     const requestedIndex = TABS.findIndex((t) => t.id === tabParam);
+//     const initialIndex = requestedIndex !== -1 ? requestedIndex : 0;
+//     if (initialIndex !== active) {
+//       setActive(initialIndex);
+//     }
+
 //     const tl = gsap.timeline({ delay: 0.25, defaults: { ease: "power3.out" } });
 //     tl.fromTo(
 //       heroEyebrowRef.current,
@@ -763,7 +1016,7 @@
 //         "-=0.25",
 //       );
 
-//     setTimeout(() => moveUnderline(0, false), 60);
+//     setTimeout(() => moveUnderline(initialIndex, false), 60);
 //   }, []);
 
 //   // Re-position underline on window resize
@@ -1061,6 +1314,28 @@
 //           transform: translateY(-2px);
 //         }
 
+//         /* ── Event image ── */
+//         .gs-event-img-wrap {
+//           width: 100%;
+//           aspect-ratio: 4 / 3;
+//           overflow: hidden;
+//           margin: -1.6rem -1.5rem 0.6rem;
+//           width: calc(100% + 3rem);
+//         }
+
+//         .gs-event-img {
+//           width: 100%;
+//           height: 100%;
+//           object-fit: cover;
+//           object-position: center;
+//           display: block;
+//           transition: transform 0.4s ease;
+//         }
+
+//         .gs-event-card:hover .gs-event-img {
+//           transform: scale(1.04);
+//         }
+
 //         .gs-event-header {
 //           display: flex;
 //           flex-direction: column;
@@ -1266,10 +1541,10 @@
 //   );
 // }
 
-
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { gsap } from "gsap";
 
 const EVENTS = [
@@ -1446,9 +1721,13 @@ const TABS = [
   },
 ];
 
-export default function GuestServices() {
+function GuestServicesContent() {
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab");
+
   const [active, setActive] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const hasMountedRef = useRef(false);
 
   const heroTitleRef = useRef(null);
   const heroSubRef = useRef(null);
@@ -1471,6 +1750,13 @@ export default function GuestServices() {
   };
 
   useEffect(() => {
+    // Deep-link support: /guestservices?tab=style-guide opens that tab directly
+    const requestedIndex = TABS.findIndex((t) => t.id === tabParam);
+    const initialIndex = requestedIndex !== -1 ? requestedIndex : 0;
+    if (initialIndex !== active) {
+      setActive(initialIndex);
+    }
+
     const tl = gsap.timeline({ delay: 0.25, defaults: { ease: "power3.out" } });
     tl.fromTo(
       heroEyebrowRef.current,
@@ -1508,7 +1794,8 @@ export default function GuestServices() {
         "-=0.25",
       );
 
-    setTimeout(() => moveUnderline(0, false), 60);
+    setTimeout(() => moveUnderline(initialIndex, false), 60);
+    hasMountedRef.current = true;
   }, []);
 
   // Re-position underline on window resize
@@ -1517,6 +1804,18 @@ export default function GuestServices() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [active]);
+
+  // React to the navbar's Style Guide link even when already on this page:
+  // Next.js won't remount the component for a query-param-only navigation,
+  // so watch the ?tab= param directly and switch tabs when it changes.
+  useEffect(() => {
+    if (!hasMountedRef.current) return;
+    const requestedIndex = TABS.findIndex((t) => t.id === tabParam);
+    if (requestedIndex !== -1 && requestedIndex !== active) {
+      switchTab(requestedIndex);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tabParam]);
 
   const switchTab = (i) => {
     if (i === active || animating) return;
@@ -2030,5 +2329,13 @@ export default function GuestServices() {
         {/* <div className="gs-edge-bottom" /> */}
       </div>
     </>
+  );
+}
+
+export default function GuestServices() {
+  return (
+    <Suspense fallback={null}>
+      <GuestServicesContent />
+    </Suspense>
   );
 }
