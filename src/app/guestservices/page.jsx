@@ -1632,80 +1632,80 @@ const TABS = [
       </div>
     ),
   },
-  {
-    id: "style-guide",
-    label: "Style Guide",
-    number: "2",
-    content: (
-      <div className="gs-content">
-        <h2 className="gs-section-title COLOR_TEXT_RED Font_Q">Style Guide</h2>
-        <p className="gs-body COLOR_TEXT_RED Font_YV gs-wardrobe-intro">
-          To help with outfit planning, we&apos;ve put together this style guide
-          for each celebration. Think of it as inspiration — we&apos;d love for
-          you to add your own personal touch. We can&apos;t wait to celebrate
-          with you!
-        </p>
+  // {
+  //   id: "style-guide",
+  //   label: "Style Guide",
+  //   number: "2",
+  //   content: (
+  //     <div className="gs-content">
+  //       <h2 className="gs-section-title COLOR_TEXT_RED Font_Q">Style Guide</h2>
+  //       <p className="gs-body COLOR_TEXT_RED Font_YV gs-wardrobe-intro">
+  //         To help with outfit planning, we&apos;ve put together this style guide
+  //         for each celebration. Think of it as inspiration — we&apos;d love for
+  //         you to add your own personal touch. We can&apos;t wait to celebrate
+  //         with you!
+  //       </p>
 
-        <div className="gs-events-grid">
-          {EVENTS.map((event) => (
-            <div className="gs-event-card" key={event.id}>
-              {event.imgURL && (
-                <div className="gs-event-img-wrap flex justify-center items-center">
-                  <img
-                    src={event.imgURL}
-                    alt={event.name}
-                    className=" w-[80%] object-cover object-center"
-                    loading="lazy"
-                  />
-                </div>
-              )}
+  //       <div className="gs-events-grid">
+  //         {EVENTS.map((event) => (
+  //           <div className="gs-event-card" key={event.id}>
+  //             {event.imgURL && (
+  //               <div className="gs-event-img-wrap flex justify-center items-center">
+  //                 <img
+  //                   src={event.imgURL}
+  //                   alt={event.name}
+  //                   className=" w-[80%] object-cover object-center"
+  //                   loading="lazy"
+  //                 />
+  //               </div>
+  //             )}
 
-              <div className="gs-event-header">
-                <span className=" COLOR_TEXT_RED Font_YV">
-                  {event.day} &middot; {event.time} &middot; {event.venue}
-                </span>
-                <h3 className="gs-event-name COLOR_TEXT_RED Font_Q">
-                  {event.name}
-                </h3>
-              </div>
+  //             <div className="gs-event-header">
+  //               <span className=" COLOR_TEXT_RED Font_YV">
+  //                 {event.day} &middot; {event.time} &middot; {event.venue}
+  //               </span>
+  //               <h3 className="gs-event-name COLOR_TEXT_RED Font_Q">
+  //                 {event.name}
+  //               </h3>
+  //             </div>
 
-              {event.colors.length > 0 && (
-                <div className="gs-swatches" aria-hidden="true">
-                  {event.colors.map((color, idx) => (
-                    <span
-                      key={idx}
-                      className="gs-swatch"
-                      style={{ backgroundColor: color }}
-                    />
-                  ))}
-                </div>
-              )}
+  //             {event.colors.length > 0 && (
+  //               <div className="gs-swatches" aria-hidden="true">
+  //                 {event.colors.map((color, idx) => (
+  //                   <span
+  //                     key={idx}
+  //                     className="gs-swatch"
+  //                     style={{ backgroundColor: color }}
+  //                   />
+  //                 ))}
+  //               </div>
+  //             )}
 
-              <p className="  COLOR_TEXT_RED Font_YV font-light">
-                Dress Code: <span>{event.dressCode}</span>
-              </p>
-              <p className="gs-event-name uppercase COLOR_TEXT_RED Font_Q mt-5">
-                {event.theme}
-              </p>
-              <p className=" COLOR_TEXT_RED Font_YV font-light opacity-90">
-                {event.description}
-              </p>
-            </div>
-          ))}
-        </div>
+  //             <p className="  COLOR_TEXT_RED Font_YV font-light">
+  //               Dress Code: <span>{event.dressCode}</span>
+  //             </p>
+  //             <p className="gs-event-name uppercase COLOR_TEXT_RED Font_Q mt-5">
+  //               {event.theme}
+  //             </p>
+  //             <p className=" COLOR_TEXT_RED Font_YV font-light opacity-90">
+  //               {event.description}
+  //             </p>
+  //           </div>
+  //         ))}
+  //       </div>
 
-        <a href="/PDF/LRWG.pdf" target="blank">
-          <div className=" px-5 py-2 bg-[#044BB2] hover:bg-[#07357a] sm:w-fit mt-2 mx-auto Font_YV flex justify-center items-center uppercase cursor-pointer text-white">
-            View PDF
-          </div>
-        </a>
-      </div>
-    ),
-  },
+  //       <a href="/PDF/LRWG.pdf" target="blank">
+  //         <div className=" px-5 py-2 bg-[#044BB2] hover:bg-[#07357a] sm:w-fit mt-2 mx-auto Font_YV flex justify-center items-center uppercase cursor-pointer text-white">
+  //           View PDF
+  //         </div>
+  //       </a>
+  //     </div>
+  //   ),
+  // },
   {
     id: "hair-makeup",
     label: "Hair & Makeup",
-    number: "3",
+    number: "2",
     content: (
       <div className="gs-content">
         <h2 className="gs-section-title COLOR_TEXT_RED Font_Q">
