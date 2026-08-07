@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Wedding Venue", href: "/venue" },
   { label: "Guest Services", href: "/guestservices" },
   { label: "FAQ's", href: "faq" },
+  { label: "Style Guide", href: "/style-guide" },
   { label: "Explore Marrakech", href: "/explore" },
 ];
 
