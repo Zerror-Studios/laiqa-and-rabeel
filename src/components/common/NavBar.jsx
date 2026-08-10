@@ -238,7 +238,7 @@ const NavBar = () => {
             FAQs
           </div>
         </Link>
-        <Link href={`/guestservices`}>
+        <Link href={`/style-guide`}>
           <div
             onClick={clickCheck}
             className={`w-fit h-fit  flex flex-col group relative  COLOR_TEXT_RED select-none cursor-pointer`}
