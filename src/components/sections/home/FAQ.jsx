@@ -14,7 +14,7 @@ const faqs = [
     id: 2,
     question: "Where will I stay?",
     answer:
-      `The Shariff and Jawaid families are hosting all guests for both nights across The Oberoi Marrakech and the nearby Park Hyatt Marrakech. 
+      `The Shariff and Jawaid families are hosting all guests on the nights of November 14th and 15th across The Oberoi Marrakech and the nearby Park Hyatt Marrakech. 
 `,
   },
   {
