@@ -171,25 +171,6 @@ export default function FAQ() {
                 <div className="mt-4 Font_YV text-[18px] text-[#044ab291]">
                   {faq.answer}
 
-                  {/* {(faq.id === 14 || faq.id === 15) && (
-                    <Link
-                      href="/explore"
-                      className="COLOR_TEXT_RED underline ml-2"
-                    >
-                      Know More
-                    </Link>
-                  )}
-                 
-                  {faq.id === 10 && faq.LINK && (
-                    <a
-                      href={faq.LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block mt-2 COLOR_TEXT_RED underline"
-                    >
-                      Apply for Indian e-Tourist Visa
-                    </a>
-                  )} */}
                 </div>
               </div>
 
