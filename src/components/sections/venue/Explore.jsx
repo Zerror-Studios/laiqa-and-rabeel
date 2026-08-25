@@ -256,17 +256,17 @@ const ActivitiesGrid = () => {
               please reach out to our experiences partner:
             </p>
             <p className="mt-4">
-              Marrakech Travel Experts — Driss Zidani Alaoui{" "}
+              Marrakech Travel Experts — Driss Alaoui{" "}
             </p>
             {/* <br /> */}
             <p className="mt-1">
-              <a href="mailto:driss@marrakeshtravelexperts.com" className="">
-                driss@marrakeshtravelexperts.com
+              <a href="mailto:driss@lumimorocco.com" className="">
+                driss@lumimorocco.com
               </a>{" "}
               |{" "}
               <a href="tel:+212661222557" className="">
                 {" "}
-                +212 661 222 557
+                +212 661222557
               </a>
             </p>
           </div>
