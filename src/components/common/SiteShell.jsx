@@ -24,6 +24,11 @@ export default function SiteShell({ children }) {
     return () => clearTimeout(timeout);
   }, [pathname]);
 
+  // The password gate is a standalone screen, without the nav or footer.
+  if (pathname === "/password") {
+    return children;
+  }
+
   return (
     <LenisScroll>
       <NavBar />
